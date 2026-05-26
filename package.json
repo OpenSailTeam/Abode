@@ -1,0 +1,24 @@
+{
+  "name": "abode",
+  "version": "1.0.0",
+  "description": "Local Shopify theme development tooling for the Abode theme.",
+  "scripts": {
+    "format": "prettier --write --ignore-unknown",
+    "format:check": "prettier --check --ignore-unknown",
+    "shopify": "shopify",
+    "theme:check": "shopify theme check",
+    "theme:dev": "shopify theme dev",
+    "theme:pull": "shopify theme pull",
+    "theme:push": "shopify theme push"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@shopify/cli": "^4.0.0",
+    "@shopify/prettier-plugin-liquid": "^1.10.2",
+    "@shopify/theme-check-common": "^3.26.0",
+    "@shopify/theme-check-node": "^3.26.0",
+    "prettier": "^3.8.3"
+  }
+}

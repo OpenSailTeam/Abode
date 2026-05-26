@@ -1,0 +1,616 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "dynamic_slideshow_j8JDaj": {
+      "type": "dynamic-slideshow",
+      "blocks": {
+        "slide_D9qPaX": {
+          "type": "slide",
+          "settings": {
+            "background_image": "shopify://shop_images/1_-_Evora_River_Diningroom.jpg",
+            "mobile_background_image": "shopify://shop_images/1_-_Evora_River_Diningroom.jpg",
+            "title": "BRAND NEW!",
+            "text": "Solid Maple, Cherry, Oak or Walnut 🍁 \"EVORA\" Dining Suite Features \"Glass River\" Insert",
+            "color": "#ffffff",
+            "link": "",
+            "text_alignment": "center",
+            "button_one_label": "View collection",
+            "button_one_link": "/search?type=article%2Cpage%2Cproduct&q=Evora*",
+            "button_one_style": "primary",
+            "button_two_label": "",
+            "button_two_link": "",
+            "button_two_style": "primary",
+            "show_overlay": true,
+            "overlay_color": "#000000",
+            "overlay_opacity": 50
+          }
+        },
+        "slide_kf3DiL": {
+          "type": "slide",
+          "settings": {
+            "background_image": "shopify://shop_images/Evora_Bedroom_Furniture.jpg",
+            "title": "IN STOCK!",
+            "text": "Mid-Century Modern Solid Maple, Cherry, Oak or Walnut 🍁 EVORA Bedroom Suite",
+            "color": "#ffffff",
+            "link": "",
+            "text_alignment": "center",
+            "button_one_label": "View collection",
+            "button_one_link": "/search?type=article%2Cpage%2Cproduct&q=Evora*",
+            "button_one_style": "primary",
+            "button_two_label": "",
+            "button_two_link": "",
+            "button_two_style": "primary",
+            "show_overlay": true,
+            "overlay_color": "#000000",
+            "overlay_opacity": 50
+          }
+        },
+        "slide_FydG9z": {
+          "type": "slide",
+          "settings": {
+            "background_image": "shopify://shop_images/3_-_Heritage_Barley_Maple.jpg",
+            "mobile_background_image": "shopify://shop_images/3_-_Heritage_Barley_Maple.jpg",
+            "title": "\"GLENGARRY\" Living Room Tables",
+            "text": "Solid Heritage Barley Maple 🍁 Coffee, End, Chair Side & Sofa Tables",
+            "color": "#ffffff",
+            "link": "",
+            "text_alignment": "center",
+            "button_one_label": "View collection",
+            "button_one_link": "/search?type=product&q=glengarry*",
+            "button_one_style": "primary",
+            "button_two_label": "",
+            "button_two_link": "",
+            "button_two_style": "primary",
+            "show_overlay": true,
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "slide_ckwcDy": {
+          "type": "slide",
+          "settings": {
+            "background_image": "shopify://shop_images/recliner.jpg",
+            "mobile_background_image": "shopify://shop_images/recliner.jpg",
+            "title": "\"CORLLINI\" Barrel Swivel Recliner",
+            "text": "Made in North America. Push back on the arms for easy recline ability, or upgrade to power with a stylish touch button feature, 700 Fabric Options",
+            "color": "#ffffff",
+            "link": "",
+            "text_alignment": "center",
+            "button_one_label": "View collection",
+            "button_one_link": "shopify://products/corllini-swivel-recliner-in-grey",
+            "button_one_style": "primary",
+            "button_two_label": "",
+            "button_two_link": "",
+            "button_two_style": "primary",
+            "show_overlay": true,
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "slide_zdp7Ti": {
+          "type": "slide",
+          "settings": {
+            "background_image": "shopify://shop_images/5_-_Tribeca_Office.jpg",
+            "mobile_background_image": "shopify://shop_images/5_-_Tribeca_Office.jpg",
+            "title": "\"TRIBECA\" Office Furniture",
+            "text": "🍁 Mid Century Modern Desks, Bookcases, Filing Cabinets, etc",
+            "color": "#ffffff",
+            "link": "",
+            "text_alignment": "center",
+            "button_one_label": "View collection",
+            "button_one_link": "/search?type=product&q=tribeca*",
+            "button_one_style": "primary",
+            "button_two_label": "",
+            "button_two_link": "",
+            "button_two_style": "primary",
+            "show_overlay": true,
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "slide_D9qPaX",
+        "slide_kf3DiL",
+        "slide_FydG9z",
+        "slide_ckwcDy",
+        "slide_zdp7Ti"
+      ],
+      "settings": {
+        "enable_autoplay": true,
+        "autoplay_duration": 8,
+        "slideshow_width": "content",
+        "slideshow_height": "large",
+        "slideshow_height_mobile": "medium",
+        "slideshow_text_below_image": true
+      }
+    },
+    "shoppable_slideshow_xyApjc": {
+      "type": "shoppable-slideshow",
+      "blocks": {
+        "hotspot_fErMEV": {
+          "type": "hotspot",
+          "settings": {
+            "product": "evora-sideboards",
+            "x_axis": 4,
+            "y_axis": 40,
+            "photo_number": 0
+          }
+        },
+        "hotspot_ty6zgL": {
+          "type": "hotspot",
+          "settings": {
+            "product": "evora-dining-benches",
+            "x_axis": 8,
+            "y_axis": 25,
+            "photo_number": 0
+          }
+        },
+        "hotspot_C6h3LH": {
+          "type": "hotspot",
+          "disabled": true,
+          "settings": {
+            "product": "evora-glass-river-top-dining-tables",
+            "x_axis": 11,
+            "y_axis": 43,
+            "photo_number": 0
+          }
+        },
+        "hotspot_g944DL": {
+          "type": "hotspot",
+          "settings": {
+            "product": "evora-side-chair",
+            "x_axis": 14,
+            "y_axis": 25,
+            "photo_number": 0
+          }
+        },
+        "hotspot_immCCi": {
+          "type": "hotspot",
+          "settings": {
+            "product": "evora-chests",
+            "x_axis": 21,
+            "y_axis": 50,
+            "photo_number": 0
+          }
+        },
+        "hotspot_PLfrLV": {
+          "type": "hotspot",
+          "settings": {
+            "product": "evora-dressers",
+            "x_axis": 25,
+            "y_axis": 51,
+            "photo_number": 0
+          }
+        },
+        "hotspot_GaLARx": {
+          "type": "hotspot",
+          "settings": {
+            "product": "evora-beds",
+            "x_axis": 30,
+            "y_axis": 38,
+            "photo_number": 0
+          }
+        },
+        "hotspot_4gX4EK": {
+          "type": "hotspot",
+          "settings": {
+            "product": "evora-nightstands",
+            "x_axis": 35,
+            "y_axis": 45,
+            "photo_number": 0
+          }
+        },
+        "hotspot_MknExW": {
+          "type": "hotspot",
+          "settings": {
+            "product": "glengarry-side-tables-1",
+            "x_axis": 39,
+            "y_axis": 55,
+            "photo_number": 1
+          }
+        },
+        "hotspot_LWp4Am": {
+          "type": "hotspot",
+          "settings": {
+            "product": "glengarry-side-tables-1",
+            "x_axis": 51,
+            "y_axis": 55,
+            "photo_number": 2
+          }
+        },
+        "hotspot_XrfqeU": {
+          "type": "hotspot",
+          "settings": {
+            "product": "glengarry-coffee-table-1",
+            "x_axis": 44,
+            "y_axis": 50,
+            "photo_number": 2
+          }
+        },
+        "hotspot_YHXqFF": {
+          "type": "hotspot",
+          "settings": {
+            "product": "corllini-swivel-recliner-in-grey",
+            "x_axis": 64,
+            "y_axis": 50,
+            "photo_number": 0
+          }
+        },
+        "hotspot_i7eRAR": {
+          "type": "hotspot",
+          "settings": {
+            "product": "tribeca-executive-desks",
+            "x_axis": 85,
+            "y_axis": 35,
+            "photo_number": 3
+          }
+        },
+        "hotspot_bLQir3": {
+          "type": "hotspot",
+          "settings": {
+            "product": "tribeca-bookcases",
+            "x_axis": 79,
+            "y_axis": 50,
+            "photo_number": 0
+          }
+        },
+        "hotspot_JEEhMQ": {
+          "type": "hotspot",
+          "settings": {
+            "product": "tribeca-bookcases",
+            "x_axis": 93,
+            "y_axis": 50,
+            "photo_number": 2
+          }
+        },
+        "hotspot_cRxGd6": {
+          "type": "hotspot",
+          "settings": {
+            "product": "tribeca-filing-cabinet",
+            "x_axis": 97,
+            "y_axis": 35,
+            "photo_number": 0
+          }
+        }
+      },
+      "block_order": [
+        "hotspot_fErMEV",
+        "hotspot_ty6zgL",
+        "hotspot_C6h3LH",
+        "hotspot_g944DL",
+        "hotspot_immCCi",
+        "hotspot_PLfrLV",
+        "hotspot_GaLARx",
+        "hotspot_4gX4EK",
+        "hotspot_MknExW",
+        "hotspot_LWp4Am",
+        "hotspot_XrfqeU",
+        "hotspot_YHXqFF",
+        "hotspot_i7eRAR",
+        "hotspot_bLQir3",
+        "hotspot_JEEhMQ",
+        "hotspot_cRxGd6"
+      ],
+      "settings": {
+        "title": "",
+        "image": "shopify://shop_images/carousel4.jpg",
+        "image_width": "full",
+        "link_text": "View product",
+        "textbox_title": "",
+        "textbox_subheading": "",
+        "textbox_button_label": "Button",
+        "textbox_button_link": "",
+        "textbox_button_style": "primary",
+        "textbox_text_alignment": "left",
+        "textbox_text_position": "right"
+      }
+    },
+    "dynamic_highlights_banner": {
+      "type": "dynamic-highlights-banner",
+      "blocks": {
+        "highlight-1": {
+          "type": "highlight",
+          "settings": {
+            "icon": "icon-delivery-handoff",
+            "title": "Delivery Options",
+            "text": "<p>Delivery Options Available, Inquire now</p><p><a href=\"mailto:abodefurniture@sasktel.net\" title=\"mailto:abodefurniture@sasktel.net\">abodefurniture@sasktel.net</a></p>",
+            "link": ""
+          }
+        },
+        "highlight-2": {
+          "type": "highlight",
+          "settings": {
+            "icon": "icon-cell-phone",
+            "title": "Contact Us",
+            "text": "<p>306-934-1733</p><p><a href=\"mailto:abodefurniture@sasktel.net\"><span style=\"text-decoration:underline\">abodefurniture@sasktel.net</span></a></p>",
+            "link": ""
+          }
+        },
+        "highlight-3": {
+          "type": "highlight",
+          "disabled": true,
+          "settings": {
+            "icon": "icon-chat-alternate",
+            "title": "Chat With Us",
+            "text": "<p>We Have Friendly Staff</p>",
+            "link": ""
+          }
+        },
+        "highlight-4": {
+          "type": "highlight",
+          "settings": {
+            "icon": "icon-pin",
+            "title": "Location",
+            "text": "<p><a href=\"https://goo.gl/maps/AT6gAQrX4LTCn8mS7\" target=\"_blank\" title=\"https://goo.gl/maps/AT6gAQrX4LTCn8mS7\">819 2nd Ave N, </a></p><p><a href=\"https://goo.gl/maps/AT6gAQrX4LTCn8mS7\" target=\"_blank\" title=\"https://goo.gl/maps/AT6gAQrX4LTCn8mS7\">Saskatoon, SK</a></p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "highlight-1",
+        "highlight-2",
+        "highlight-3",
+        "highlight-4"
+      ],
+      "settings": {
+        "section_spacing": false,
+        "section_width": "content-width",
+        "icon_layout": "center",
+        "color": "#1d1d1d",
+        "icon_color": "#8cb639",
+        "background_color": "#ffffff",
+        "mobile_layout": "grid"
+      }
+    },
+    "dynamic_collection_list_BYYMhk": {
+      "type": "dynamic-collection-list",
+      "blocks": {
+        "collection_BXiwUb": {
+          "type": "collection",
+          "settings": {
+            "collection": "living-room",
+            "title": ""
+          }
+        },
+        "collection_GgaLGK": {
+          "type": "collection",
+          "settings": {
+            "collection": "bedroom",
+            "title": ""
+          }
+        },
+        "collection_WLdLCA": {
+          "type": "collection",
+          "settings": {
+            "collection": "dining-room",
+            "title": ""
+          }
+        },
+        "collection_ygzUNH": {
+          "type": "collection",
+          "settings": {
+            "collection": "home-office",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_BXiwUb",
+        "collection_GgaLGK",
+        "collection_WLdLCA",
+        "collection_ygzUNH"
+      ],
+      "settings": {
+        "title": "Shop By Category",
+        "thumbnail_columns_desktop": 4,
+        "thumbnail_columns_mobile": 2,
+        "image-crop": "original",
+        "cta_label": "View All Categories",
+        "cta_link": "shopify://collections",
+        "cta_button_style": "primary"
+      }
+    },
+    "1655746474430d28f1": {
+      "type": "dynamic-featured-collection",
+      "settings": {
+        "title": "In Stock",
+        "layout": "grid",
+        "collection": "in-stock",
+        "product_count": 5,
+        "cta_label": "View All Products",
+        "cta_button_style": "primary"
+      }
+    },
+    "13402223-688a-453c-a188-422b5eeaa135": {
+      "type": "dynamic-featured-collection",
+      "settings": {
+        "title": "Clearance",
+        "layout": "grid",
+        "collection": "clearance",
+        "product_count": 5,
+        "cta_label": "View All Clearance",
+        "cta_button_style": "primary"
+      }
+    },
+    "dynamic_testimonials": {
+      "type": "dynamic-testimonials",
+      "blocks": {
+        "testimonial-3": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "star_rating": "5",
+            "text": "<p>The store may be a little congested but the service and quality speak for itself.  Super high quality products made in canada.  Go to another store first and then go here.  If you want to buy furniture that will last, this is the place to shop.</p>",
+            "author": "<p>J W</p>"
+          }
+        },
+        "testimonial-1": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": "5",
+            "text": "<p>We moved last fall and required a few new pieces of furniture and décor for our new home.  Our experience with the team of Abode was top notch.  As a matter of fact it was so positive that I went back a number of times to pick up additional small pieces to complete the look of various rooms.  We now have a number of quality and unique pieces that are the highlight of our home.</p>",
+            "author": "<p>Brenda Nowakowski</p>"
+          }
+        },
+        "testimonial-2": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": "5",
+            "text": "<p>We had a great experience at Abode Furniture. Gerrit went above and beyond our expectations and our family has really enjoyed our purchase. We bought a bunk bed for our boys and it looks great and they love it.</p>",
+            "author": "<p><a href=\"https://www.google.com/maps/contrib/117555380517184759883?hl=en-US&sa=X&ved=2ahUKEwi7idvM07z4AhW5IjQIHTNmBGgQvvQBegUIARCdAQ\">Ben Samuel</a></p>"
+          }
+        },
+        "testimonial-4": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": "4.5",
+            "text": "<p>I love love love this place!<br/>No words to describe the quality of their products, not to mention the great customer service.<br/>You can customize your furnitue with the design, colour, and size that you like; or you can purchase the products that they have in stock.<br/>Plus, is Canadian-Made!</p>",
+            "author": "<p>Ana M</p>"
+          }
+        },
+        "testimonial-5": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": "4.5",
+            "text": "<p>The sales staff at Abode were knowledgeable and helpful in selecting a very special dining set for our home.  The fact that we could custom size our set was the deciding factor in our purchase.</p>",
+            "author": "<p>Kim vanDuyvendyk</p>"
+          }
+        },
+        "88bc0470-b910-4582-9a3d-d6ef395a5ea5": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": "5",
+            "text": "<p>Purchased a very large maple custom size table to accommodate our large family. Gerrit and his team were excellent in explaining all the options to me and patient with me while i took my time making all the detailed decisions on our table. We got it 8 months ago now and its an amazing table, Amazing details, amazing quality. Overall very impressed with this shop and highly recommend if you really want quality product.</p>",
+            "author": "<p>Mona A</p>"
+          }
+        },
+        "9fcf1108-da87-44c0-bc46-183eef19e228": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": "5",
+            "text": "<p>To the wonderful Abode team, thanks for your great service! </p>",
+            "author": "<p>Teresa</p>"
+          }
+        },
+        "3d8f5c82-1a36-4f2d-b65a-eb8b367b9c0e": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "star_rating": "5",
+            "text": "<p>Yes!!!!! Purchased dining chairs in 2022, and the table in 2023!!!! Love love the quality and workmanship!!!</p>",
+            "author": "<p>Karri W</p>"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial-3",
+        "testimonial-1",
+        "testimonial-2",
+        "testimonial-4",
+        "testimonial-5",
+        "88bc0470-b910-4582-9a3d-d6ef395a5ea5",
+        "9fcf1108-da87-44c0-bc46-183eef19e228",
+        "3d8f5c82-1a36-4f2d-b65a-eb8b367b9c0e"
+      ],
+      "settings": {
+        "title": "Testimonials",
+        "testimonials_per_row": "3",
+        "image_crop": "circle",
+        "text_size": "large"
+      }
+    },
+    "164554963121b95590": {
+      "type": "pxs-image-with-text-overlay",
+      "disabled": true,
+      "settings": {
+        "section_height": "medium",
+        "position": "center center",
+        "title": "Sign Up To Our Newsletter",
+        "text": "<p>Get information on our latest deals and offers!</p><p></p><p><a href=\"http://eepurl.com/dwrA6v\" target=\"_blank\" title=\"http://eepurl.com/dwrA6v\">Sign Up Now</a></p>",
+        "content_position": "center-center",
+        "color": "#ffffff",
+        "overlay_background": "#8cb639",
+        "overlay_opacity": 100,
+        "link": "",
+        "button_text": ""
+      }
+    },
+    "1645204248dc08f131": {
+      "type": "dynamic-highlights-banner",
+      "blocks": {
+        "1645204247a136b0fd-0": {
+          "type": "highlight",
+          "settings": {
+            "icon": "icon-delivery-handoff",
+            "title": "Delivery Options",
+            "text": "<p>We are currently only </p><p>offering in store pick up</p>",
+            "link": ""
+          }
+        },
+        "1645204247a136b0fd-1": {
+          "type": "highlight",
+          "settings": {
+            "icon": "icon-cell-phone",
+            "title": "Contact Us",
+            "text": "<p>(306) 934-1733</p><p><a href=\"mailto:abodefurniture@sasktel.net\"><span style=\"text-decoration:underline\">abodefurniture@sasktel.net</span></a></p>",
+            "link": ""
+          }
+        },
+        "1645204247a136b0fd-2": {
+          "type": "highlight",
+          "disabled": true,
+          "settings": {
+            "icon": "icon-chat-alternate",
+            "title": "Chat With Us",
+            "text": "<p>We offer 24-hour chat support</p>",
+            "link": ""
+          }
+        },
+        "1645204247a136b0fd-3": {
+          "type": "highlight",
+          "settings": {
+            "icon": "icon-pin",
+            "title": "Location",
+            "text": "<p>Saskatoon, SK</p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1645204247a136b0fd-0",
+        "1645204247a136b0fd-1",
+        "1645204247a136b0fd-2",
+        "1645204247a136b0fd-3"
+      ],
+      "settings": {
+        "section_spacing": false,
+        "section_width": "full-width",
+        "icon_layout": "center",
+        "color": "#4d4d4d",
+        "icon_color": "#8cb639",
+        "background_color": "#f8f8f8",
+        "mobile_layout": "slider"
+      }
+    }
+  },
+  "order": [
+    "dynamic_slideshow_j8JDaj",
+    "shoppable_slideshow_xyApjc",
+    "dynamic_highlights_banner",
+    "dynamic_collection_list_BYYMhk",
+    "1655746474430d28f1",
+    "13402223-688a-453c-a188-422b5eeaa135",
+    "dynamic_testimonials",
+    "164554963121b95590",
+    "1645204248dc08f131"
+  ]
+}

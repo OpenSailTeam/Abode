@@ -1,0 +1,60 @@
+{% doc %}
+  @param {string} [extra_class] - Optional class name to add to the direct contact wrapper
+  @param {string} [email_subject] - Optional subject line for the email link
+{% enddoc %}
+
+{% liquid
+  assign contact_direct_class = extra_class | default: ''
+  assign contact_direct_phone_label = '(306) 934-1733'
+  assign contact_direct_phone_href = '+13069341733'
+  assign contact_direct_email = settings.social_email | default: 'abodefurniture@sasktel.net' | strip
+  assign contact_direct_email_subject = email_subject | default: '' | strip
+%}
+
+<aside class="contact-direct-options{% if contact_direct_class != blank %} {{ contact_direct_class }}{% endif %}">
+  <div class="contact-direct-options__header">
+    <p class="contact-direct-options__heading">
+      {{ 'contact.direct.heading' | t }}
+    </p>
+    <p class="contact-direct-options__intro">
+      {{ 'contact.direct.intro' | t }}
+    </p>
+  </div>
+
+  <div class="contact-direct-options__links">
+    <a class="contact-direct-options__item" href="tel:{{ contact_direct_phone_href }}">
+      <span class="contact-direct-options__icon">
+        {% render 'icon-library', id: 'icon-cell-phone' %}
+      </span>
+      <span class="contact-direct-options__text">
+        <span class="contact-direct-options__label">
+          {{ 'contact.direct.phone_label' | t }}
+        </span>
+        <span class="contact-direct-options__value">
+          {{ contact_direct_phone_label }}
+        </span>
+      </span>
+    </a>
+
+    {% if contact_direct_email != blank %}
+      <a
+        class="contact-direct-options__item contact-direct-options__item--email"
+        href="mailto:{{ contact_direct_email | escape }}{% if contact_direct_email_subject != blank %}?subject={{ contact_direct_email_subject | url_encode }}{% endif %}"
+        target="_blank"
+        rel="noopener"
+      >
+        <span class="contact-direct-options__icon">
+          {% render 'icon-library', id: 'icon-email' %}
+        </span>
+        <span class="contact-direct-options__text">
+          <span class="contact-direct-options__label">
+            {{ 'contact.direct.email_label' | t }}
+          </span>
+          <span class="contact-direct-options__value contact-direct-options__value--email">
+            {{ contact_direct_email | escape }}
+          </span>
+        </span>
+      </a>
+    {% endif %}
+  </div>
+</aside>

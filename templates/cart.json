@@ -1,0 +1,43 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "static-cart",
+      "blocks": {
+        "95b84f60-3b58-4456-bca6-aec4ffe3ac1c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/INSTORE.jpg"
+          }
+        },
+        "525692ee-8db2-4403-8526-d49340328106": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p>We are currently not doing delivery orders online, <strong>only in-store pick up.</strong> Pick up details will be given on checkout. </p><p></p><p>Delivery and set up options available in select regions. <a href=\"/pages/contact\" title=\"Contact\">Contact us</a> for rates.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "95b84f60-3b58-4456-bca6-aec4ffe3ac1c",
+        "525692ee-8db2-4403-8526-d49340328106"
+      ],
+      "settings": {
+        "show_sku": false,
+        "enable_order_notes": false,
+        "enable_shipping_calc": true,
+        "shipping_calc_default_country": "Canada"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

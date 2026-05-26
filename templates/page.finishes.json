@@ -1,0 +1,259 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "settings": {}
+    },
+    "165185243529e5a571": {
+      "type": "pxs-image-with-text-overlay",
+      "settings": {
+        "section_height": "original",
+        "image": "shopify://shop_images/ffh.jpg",
+        "position": "center center",
+        "title": "SERVING SASKATOON FOR OVER TWO DECADES AND COUNTING",
+        "text": "<p>We continue to grow and serve with the principals that brought us this far. Our personable staff are well versed in home decor.</p>",
+        "content_position": "center-center",
+        "color": "#ffffff",
+        "overlay_background": "#030303",
+        "overlay_opacity": 22,
+        "link": "shopify://pages/contact",
+        "button_text": "GET IN TOUCH"
+      }
+    },
+    "1651852290c28403c3": {
+      "type": "dynamic-image-with-text",
+      "settings": {
+        "section_heading": "",
+        "image": "shopify://shop_images/567.jpg",
+        "crop": "center",
+        "desktop_height": "natural",
+        "mobile_height": "natural",
+        "desktop_image_alignment": "left",
+        "mobile_image_alignment": "top",
+        "heading": "We Are A Modern Furniture Store",
+        "subheading": "<p>We operated as Oaksmith Interiors until 2018. <strong>A lot had changed over those 21 years.</strong> We moved from Circle Drive to our current location on 2nd Ave North. Our offerings had expanded beyond oak furniture. We continued to offer solid wood furniture along with our new contemporary furniture and home decor products. It was clear that we had outgrown our space and name.</p><p>Our expanded and renovated furniture showroom has something for everyone. We carry traditional classics, ultra-modern styles and everything between. If your home is stately and elegant or rustic and charming, this is your source for furniture and decor! This is what we wanted to communicate when we changed our name. <strong>We still carry the fine-crafted wood furnishings but have adopted a contemporary twist.</strong></p>",
+        "text_alignment": "left",
+        "button_label": "Explore Furniture",
+        "button_link": "shopify://collections"
+      }
+    },
+    "1651852453988621c3": {
+      "type": "dynamic-promo-grid",
+      "blocks": {
+        "165185245323e8ce6f-0": {
+          "type": "promotion",
+          "settings": {
+            "image": "shopify://shop_images/4568.jpg",
+            "background_position": "center-center",
+            "title": "Choose Your Woods",
+            "text": "Choose from wood such as oak, maple, birch, pine, cherry and more.",
+            "color": "#fafafa",
+            "block_link": "",
+            "button_text": "",
+            "button_style": "primary",
+            "show_overlay": true,
+            "background": "#000000",
+            "opacity": 33
+          }
+        },
+        "165185245323e8ce6f-1": {
+          "type": "promotion",
+          "settings": {
+            "image": "shopify://shop_images/888.jpg",
+            "background_position": "center-center",
+            "title": "Choose Your Stain",
+            "text": "Choose the stain colour you’d like, from natural wood tones to dark modern colours.",
+            "color": "#ffffff",
+            "block_link": "",
+            "button_text": "",
+            "button_style": "primary",
+            "show_overlay": true,
+            "background": "#010101",
+            "opacity": 30
+          }
+        },
+        "165185245323e8ce6f-2": {
+          "type": "promotion",
+          "settings": {
+            "image": "shopify://shop_images/9.jpg",
+            "background_position": "center-center",
+            "title": "Choose Your Hardware",
+            "text": "Choose the hardware and handles that match in your home.",
+            "color": "#fffdfd",
+            "block_link": "",
+            "button_text": "",
+            "button_style": "primary",
+            "show_overlay": true,
+            "background": "#000000",
+            "opacity": 28
+          }
+        },
+        "165185245323e8ce6f-3": {
+          "type": "promotion",
+          "settings": {
+            "image": "shopify://shop_images/456.jpg",
+            "background_position": "center-center",
+            "title": "More Options",
+            "text": "And on many pieces choose from additional options such as, decorative glass, lighting and upgraded drawer boxes.",
+            "color": "#ffffff",
+            "block_link": "",
+            "button_text": "",
+            "button_style": "primary",
+            "show_overlay": true,
+            "background": "#030303",
+            "opacity": 43
+          }
+        }
+      },
+      "block_order": [
+        "165185245323e8ce6f-0",
+        "165185245323e8ce6f-1",
+        "165185245323e8ce6f-2",
+        "165185245323e8ce6f-3"
+      ],
+      "settings": {
+        "title": "",
+        "section_height": "large",
+        "section_columns": 2,
+        "text_alignment": "top-left"
+      }
+    },
+    "16518523767a90b798": {
+      "type": "pxs-map",
+      "settings": {
+        "section_height": "medium",
+        "title": "Come Visit Us",
+        "content": "<p>819 2nd Ave N, Saskatoon,</p><p>SK S7K 2E2, Canada</p>",
+        "text_alignment": "center",
+        "layout": "overlay-center-center",
+        "layout_mobile": "below",
+        "address": "819 2nd Ave N, Saskatoon,  SK S7K 2E2, Canada",
+        "api_key": "",
+        "enable_custom_colors": false,
+        "foreground_color": "#8cb639",
+        "background_color": "#ffffff",
+        "zoom": 2,
+        "image": "shopify://shop_images/2456.jpg",
+        "image_position": "center center",
+        "overlay_color": "#040404",
+        "opacity": 26
+      }
+    },
+    "1651852333a15643a3": {
+      "type": "dynamic-testimonials",
+      "disabled": true,
+      "blocks": {
+        "165185233304bba882-0": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": "4.5",
+            "text": "<p>Add customer reviews and testimonials to showcase your store's happy customers.</p>",
+            "author": "<p>Author's name</p>"
+          }
+        },
+        "165185233304bba882-1": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": "4.5",
+            "text": "<p>Add customer reviews and testimonials to showcase your store's happy customers.</p>",
+            "author": "<p>Author's name</p>"
+          }
+        },
+        "165185233304bba882-2": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": "4.5",
+            "text": "<p>Add customer reviews and testimonials to showcase your store's happy customers.</p>",
+            "author": "<p>Author's name</p>"
+          }
+        }
+      },
+      "block_order": [
+        "165185233304bba882-0",
+        "165185233304bba882-1",
+        "165185233304bba882-2"
+      ],
+      "settings": {
+        "title": "Testimonials",
+        "image_crop": "circle",
+        "text_size": "medium"
+      }
+    },
+    "1651852311452240e6": {
+      "type": "dynamic-highlights-banner",
+      "disabled": true,
+      "blocks": {
+        "1651852311d0a1f944-0": {
+          "type": "highlight",
+          "settings": {
+            "icon": "icon-delivery",
+            "title": "Free Shipping",
+            "text": "<p>When you spend $100+</p>",
+            "link": ""
+          }
+        },
+        "1651852311d0a1f944-1": {
+          "type": "highlight",
+          "settings": {
+            "icon": "icon-cell-phone",
+            "title": "Give Us A Call",
+            "text": "<p>+1 (201) 555-5555</p>",
+            "link": ""
+          }
+        },
+        "1651852311d0a1f944-2": {
+          "type": "highlight",
+          "disabled": true,
+          "settings": {
+            "icon": "icon-chat-alternate",
+            "title": "Chat With Us",
+            "text": "<p>We offer 24-hour chat support</p>",
+            "link": ""
+          }
+        },
+        "1651852311d0a1f944-3": {
+          "type": "highlight",
+          "settings": {
+            "icon": "icon-pin",
+            "title": "Locations",
+            "text": "<p>Find a store near you</p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1651852311d0a1f944-0",
+        "1651852311d0a1f944-1",
+        "1651852311d0a1f944-2",
+        "1651852311d0a1f944-3"
+      ],
+      "settings": {
+        "section_spacing": false,
+        "section_width": "full-width",
+        "icon_layout": "left",
+        "color": "#4d4d4d",
+        "icon_color": "#4d4d4d",
+        "background_color": "#f8f8f8",
+        "mobile_layout": "slider"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "165185243529e5a571",
+    "1651852290c28403c3",
+    "1651852453988621c3",
+    "16518523767a90b798",
+    "1651852333a15643a3",
+    "1651852311452240e6"
+  ]
+}

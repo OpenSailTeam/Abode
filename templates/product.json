@@ -1,0 +1,103 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "static-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "1d9f42d1-2048-4d6f-90c5-ca1493c7d493": {
+          "type": "sku",
+          "settings": {}
+        },
+        "vendor": {
+          "type": "vendor",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "form": {
+          "type": "form",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "settings": {}
+        },
+        "a5ddf0a2-511d-4042-9f11-413ee917052c": {
+          "type": "collapsible-tab",
+          "settings": {
+            "collapsible_tab_heading": "Shipping Information",
+            "collapsible_tab_text": "<p>Delivery and set up options available in select regions. Contact us for rates.</p>"
+          }
+        },
+        "2fa8fcad-85f0-4349-920d-407c5d43e6ae": {
+          "type": "collapsible-tab",
+          "settings": {
+            "collapsible_tab_heading": "Have Any Questions?",
+            "collapsible_tab_text": "<p>Get in touch with our Saskatoon team today! <a href=\"/pages/contact\" title=\"Contact\">Contact Us</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "1d9f42d1-2048-4d6f-90c5-ca1493c7d493",
+        "vendor",
+        "price",
+        "description",
+        "form",
+        "share",
+        "a5ddf0a2-511d-4042-9f11-413ee917052c",
+        "2fa8fcad-85f0-4349-920d-407c5d43e6ae"
+      ],
+      "settings": {
+        "gallery_aspect_ratio": "natural",
+        "gallery_image_crop": false,
+        "gallery_thumbnail_position": "below",
+        "gallery_video_autoplay": true,
+        "gallery_video_looping": true,
+        "gallery_hover_zoom": "disabled",
+        "gallery_click_to_zoom": "always"
+      }
+    },
+    "recommendations": {
+      "type": "static-product-recommendations",
+      "settings": {
+        "show_product_recommendations": true,
+        "product_recommendations_heading": "You may also like"
+      }
+    },
+    "reviews": {
+      "type": "static-product-reviews",
+      "settings": {}
+    },
+    "recently-viewed": {
+      "type": "static-recently-viewed",
+      "settings": {
+        "enable_recently_viewed_products": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "recommendations",
+    "reviews",
+    "recently-viewed"
+  ]
+}
