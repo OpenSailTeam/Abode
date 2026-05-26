@@ -76,6 +76,28 @@
         "gallery_click_to_zoom": "always"
       }
     },
+    "pxs_map_UkcqXy": {
+      "type": "pxs-map",
+      "name": "Map",
+      "settings": {
+        "section_height": "medium",
+        "title": "Come Visit Us",
+        "content": "<p>819 2nd Ave N, Saskatoon, </p><p>SK S7K 2E2, Canada</p>",
+        "text_alignment": "center",
+        "layout": "overlay-center-center",
+        "layout_mobile": "below",
+        "address": "819 2nd Ave N, Saskatoon, SK S7K 2E2, Canada",
+        "api_key": "",
+        "enable_custom_colors": false,
+        "foreground_color": "#8cb639",
+        "background_color": "#ffffff",
+        "zoom": 2,
+        "image": "shopify://shop_images/2456.jpg",
+        "image_position": "center center",
+        "overlay_color": "#8cb639",
+        "opacity": 10
+      }
+    },
     "recommendations": {
       "type": "static-product-recommendations",
       "settings": {
@@ -96,6 +118,7 @@
   },
   "order": [
     "main",
+    "pxs_map_UkcqXy",
     "recommendations",
     "reviews",
     "recently-viewed"

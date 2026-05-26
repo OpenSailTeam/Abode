@@ -17608,6 +17608,35 @@ shopify-payment-terms {
     text-transform: none;
   }
 {%- endif -%}
+
+.product-form--atc-button.button-primary,
+.smart-payment-enabled .product-form--atc-button.button-primary {
+  color: {{ settings.color_button_text }};
+  background-color: {{ settings.color_button_background }};
+  border: 1px solid {{ settings.color_button_background }};
+}
+
+.product-form--atc-button.button-primary:not(.disabled):hover,
+.smart-payment-enabled .product-form--atc-button.button-primary:not(.disabled):hover {
+  background: {{ color_background | color_mix: settings.color_button_background, 10 }};
+  border: 1px solid {{ color_background | color_mix: settings.color_button_background, 10 }};
+}
+
+.product-form--atc-button.button-primary:active,
+.smart-payment-enabled .product-form--atc-button.button-primary:active {
+  background: {{ color_button_background_focus }};
+  border: 1px solid {{ color_button_background_focus }};
+}
+
+.product-form--atc-button.button-primary.mdc-ripple-surface.mdc-ripple-upgraded,
+.smart-payment-enabled .product-form--atc-button.button-primary.mdc-ripple-surface.mdc-ripple-upgraded {
+  --mdc-ripple-fg-opacity: 0.16;
+}
+
+.product-form--atc-button.button-primary.mdc-ripple-surface::after,
+.smart-payment-enabled .product-form--atc-button.button-primary.mdc-ripple-surface::after {
+  background-color: {{ settings.color_button_text }};
+}
 @media screen and (max-width: 1279px) {
   .product-form--alt .product-form--atc-button {
     font-size: {{ font_size_base  | append: 'px' }};
