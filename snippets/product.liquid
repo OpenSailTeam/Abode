@@ -182,43 +182,45 @@
                   </span>
                 </div>
               {% endif %}
-              <div
-                class="product-pricing"
-                aria-live="polite"
-                data-product-pricing
-              >
-                {%
-                  render 'product-badge',
-                  class_root: 'product',
-                  product: product,
-                  product_available: product_available,
-                  on_sale: on_sale,
-                  price: price,
-                  compare_at_price: compare_at_price,
-                  show_saved: true,
-                  include_range: false,
-                  selected_variant: selected_variant,
-                %}
+              {% unless product.tags contains 'noprice' %}
+                <div
+                  class="product-pricing"
+                  aria-live="polite"
+                  data-product-pricing
+                >
+                  {%
+                    render 'product-badge',
+                    class_root: 'product',
+                    product: product,
+                    product_available: product_available,
+                    on_sale: on_sale,
+                    price: price,
+                    compare_at_price: compare_at_price,
+                    show_saved: true,
+                    include_range: false,
+                    selected_variant: selected_variant,
+                  %}
 
-                {%
-                  render 'product-price',
-                  product: product,
-                  class_root: 'product',
-                  price: price,
-                  price_varies: false,
-                  compare_at_price: compare_at_price,
-                  compare_at_price_varies: false,
-                  on_sale: on_sale,
-                  emphasize_price: false,
-                  show_original: true,
-                  show_range: false,
-                  include_unit_price: true,
-                  include_tax_line: true,
-                  include_hidden_price: true
-                %}
+                  {%
+                    render 'product-price',
+                    product: product,
+                    class_root: 'product',
+                    price: price,
+                    price_varies: false,
+                    compare_at_price: compare_at_price,
+                    compare_at_price_varies: false,
+                    on_sale: on_sale,
+                    emphasize_price: false,
+                    show_original: true,
+                    show_range: false,
+                    include_unit_price: true,
+                    include_tax_line: true,
+                    include_hidden_price: true
+                  %}
 
-                <form data-payment-terms-target style="display: none;"></form>
-              </div>
+                  <form data-payment-terms-target style="display: none;"></form>
+                </div>
+              {% endunless %}
 
             {% when 'sku' %}
               {% unless onboarding %}

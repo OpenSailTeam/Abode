@@ -227,9 +227,11 @@
     </variant-selection>
     {% comment %}Inject @pixelunion/shopify-variants-ui/variant-selection end{% endcomment %}
 
-    <div data-payment-terms-reference style="display: none;">
-      {{ form | payment_terms }}
-    </div>
+    {% unless product.tags contains 'noprice' %}
+      <div data-payment-terms-reference style="display: none;">
+        {{ form | payment_terms }}
+      </div>
+    {% endunless %}
   {% endform %}
 
   {% form 'contact' %}
@@ -692,9 +694,11 @@
       {% endif %}
     </div>
 
-    <div data-payment-terms-reference style="display: none;">
-      {{ form | payment_terms }}
-    </div>
+    {% unless product.tags contains 'noprice' %}
+      <div data-payment-terms-reference style="display: none;">
+        {{ form | payment_terms }}
+      </div>
+    {% endunless %}
 
     <div class="surface-pick-up" data-surface-pick-up></div>
   {% endform %}
