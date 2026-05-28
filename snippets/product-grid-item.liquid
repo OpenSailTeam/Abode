@@ -13,7 +13,6 @@
 {% assign atc_button = settings.product_grid_show_atc_button %}
 {% assign product_ratings_reviews = settings.product_ratings_reviews %}
 {% assign product_ratings_star_display = settings.product_ratings_star_display %}
-{% assign money_format = shop.money_format | strip_html %}
 
 {% if product %}
   {% assign compare_at_price = product.compare_at_price %}
@@ -40,7 +39,6 @@
     {%- endcapture -%}
   {% endif %}
 {% else %}
-  {% assign onboarding = true %}
   {% assign compare_at_price = 1999 %}
   {% assign compare_at_price_varies = false %}
   {% assign price = 1999 %}
@@ -102,13 +100,12 @@
     {%- for option in product.options_with_values -%}
       {%- assign swatch_trigger = settings.swatches_swatch_trigger | strip | downcase -%}
       {%- assign option_name = option.name | downcase -%}
-      {%- if option_name == swatch_trigger -%}
-        {%- assign show_swatches = true -%}
-        {%- assign swatch_values = option.values -%}
-        {%- assign swatch_values_count = option.values.size -%}
-        {%- assign swatch_option_key = 'option' | append: forloop.index -%}
-        {%- break -%}
-      {%- endif -%}
+        {%- if option_name == swatch_trigger -%}
+          {%- assign show_swatches = true -%}
+          {%- assign swatch_values = option.values -%}
+          {%- assign swatch_option_key = 'option' | append: forloop.index -%}
+          {%- break -%}
+        {%- endif -%}
     {%- endfor -%}
 
     {% if section.settings.filter_style == 'groups' and current_tags and show_swatches %}
@@ -280,6 +277,7 @@
           show_saved: consistent_saved,
           include_range: true,
           compare_at_price_varies: compare_at_price_varies,
+          show_product_card_badges: true,
         %}
       </figure>
     </a>
@@ -395,6 +393,7 @@
               show_saved: consistent_saved,
               compare_at_price_varies: compare_at_price_varies,
               include_range: true,
+              show_product_card_badges: true,
             %}
           </div>
 

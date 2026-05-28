@@ -1,5 +1,3 @@
-{% unless product.tags contains 'noprice' %}
-
 {% comment %}
   @param class_root {String}
     Base class root
@@ -26,11 +24,21 @@
 
   @param sales_badge_style {String}
     'percentage' or 'money'
+
+  @param show_product_card_badges {Bool}
+    Show product card tag badges alongside sale and sold out badges
 {% endcomment %}
 
 {% assign sales_badge = settings.product_sales_badge %}
 
 {% assign sales_badge_style = settings.product_sales_badge_style %}
+
+{% assign show_product_card_badges = show_product_card_badges | default: false %}
+{% assign hide_sale_badge = false %}
+
+{% if product.tags contains 'noprice' %}
+  {% assign hide_sale_badge = true %}
+{% endif %}
 
 {% comment %}Inject @pixelunion/shopify-price-ui/sale-badge begin{% endcomment %}
 {% comment %}
@@ -60,6 +68,8 @@
 
 {% assign savings_money_range = 0 %}
 {% assign savings_percentage_range = 0 %}
+
+{% assign selected_variant = selected_variant | default: product.selected_or_first_available_variant %}
 
 {% assign price_min = nil %}
 {% assign price_max = nil %}
@@ -103,19 +113,93 @@
 
 {% assign product_available = product_available | default: product.available %}
 {% assign contact = contact | default: false %}
+{% assign saved_price_single = savings_money_single | money %}
+{% assign saved_price_range = savings_money_range | money %}
+{% assign on_sale = on_sale | default: true %}
 
-{%- if product_available != true and contact != false -%}
+{% if product.tags contains 'contact' %}
+  {% assign contact = true %}
+{% endif %}
+
+{% if savings_money_range <= 0 %}
+  {% assign on_sale = false %}
+{% endif %}
+
+{% assign show_sale_badge = false %}
+{% if sales_badge and on_sale %}
+  {% unless hide_sale_badge %}
+    {% assign show_sale_badge = true %}
+  {% endunless %}
+{% endif %}
+
+{% if show_product_card_badges %}
+  {% assign sales_badge_style = 'percent' %}
+{% endif %}
+
+{% assign has_product_card_badges = false %}
+{% if show_product_card_badges %}
+  {% if product.tags contains 'instock' %}
+    {% assign has_product_card_badges = true %}
+  {% endif %}
+
+  {% if product.tags contains 'contact' %}
+    {% assign has_product_card_badges = true %}
+  {% endif %}
+
+  {% if product.tags contains 'clearance' %}
+    {% assign has_product_card_badges = true %}
+  {% endif %}
+{% endif %}
+
+{% assign show_soldout_badge = false %}
+{% if product_available != true and contact != true %}
+  {% assign show_soldout_badge = true %}
+{% endif %}
+
+{% if show_product_card_badges %}
+  {% if has_product_card_badges or show_sale_badge or show_soldout_badge %}
+    <div class="{{ class_root }}__badges">
+      {% if product.tags contains 'instock' %}
+        <span class="{{ class_root }}__badge {{ class_root }}__badge--instock">
+          In stock
+        </span>
+      {% endif %}
+
+      {% if product.tags contains 'contact' %}
+        <span class="{{ class_root }}__badge {{ class_root }}__badge--contact">
+          Order only
+        </span>
+      {% endif %}
+
+      {% if product.tags contains 'clearance' %}
+        <span class="{{ class_root }}__badge {{ class_root }}__badge--clearance">
+          Clearance
+        </span>
+      {% endif %}
+
+      {% if show_sale_badge %}
+        <span class="{{ class_root }}__badge {{ class_root }}__badge--sale" data-badge-sales>
+          <span data-badge-sales-range>
+            {{ 'product_price.badge.sale_percentage_single_html' | t: savings: savings_percentage_range | strip_newlines }}
+          </span>
+          <span data-badge-sales-single style="display: none;">
+            {{ 'product_price.badge.sale_percentage_single_html' | t: savings: savings_percentage_single | strip_newlines }}
+          </span>
+        </span>
+      {% endif %}
+
+      {% if show_soldout_badge %}
+        <span class="{{ class_root }}__badge {{ class_root }}__badge--soldout">
+          {{ 'product_price.badge.sold_out' | t }}
+        </span>
+      {% endif %}
+    </div>
+  {% endif %}
+{%- elsif show_soldout_badge -%}
   <span class="{{ class_root }}__badge {{ class_root }}__badge--soldout">
     {{ 'product_price.badge.sold_out' | t }}
   </span>
-{%- elsif sales_badge -%}
-  {% assign saved_price_single = savings_money_single | money %}
-  {% assign saved_price_range = savings_money_range | money %}
-  {% assign on_sale = on_sale | default: true %}
-  {% if savings_money_range <= 0 %}
-    {% assign on_sale = false %}
-  {% endif %}
-
+{%- elsif show_sale_badge -%}
   <span class="{{ class_root }}__badge {{ class_root }}__badge--sale"
     data-badge-sales
     {% if on_sale != true %}style="display: none;"{% endif %}
@@ -148,6 +232,5 @@
     </span>
   </span>
 {%- endif -%}
-{% comment %}Inject @pixelunion/shopify-price-ui/sale-badge end{% endcomment %}
 
-{% endunless %}
+{% comment %}Inject @pixelunion/shopify-price-ui/sale-badge end{% endcomment %}

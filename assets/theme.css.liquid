@@ -14628,6 +14628,22 @@ html body .home-section--content .promo-mosaic--inner.promo-mosaic--compressed .
   font-size: 0.8125rem;
 }
 
+.productitem__badges {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: flex-start;
+  max-width: 100%;
+}
+
+.productitem__badges .productitem__badge {
+  position: static;
+}
+
 .productitem--info {
   position: relative;
   z-index: 100;
@@ -16148,6 +16164,9 @@ html body .home-section--content .promo-mosaic--inner.promo-mosaic--compressed .
 .productgrid-listview .productitem--image-link .productitem__badge {
   display: none;
 }
+.productgrid-listview .productitem--image-link .productitem__badges {
+  display: none;
+}
 .no-touch .productgrid-listview .productitem--actions,
 .productgrid-listview .productitem--actions {
   position: static;
@@ -16195,6 +16214,19 @@ html body .home-section--content .promo-mosaic--inner.promo-mosaic--compressed .
 .productgrid-listview .productitem--actions .productitem--listview-badge .productitem__badge {
   position: relative;
   top: -0.375rem;
+}
+.no-touch .productgrid-listview .productitem--actions .productitem--listview-badge .productitem__badges,
+.productgrid-listview .productitem--actions .productitem--listview-badge .productitem__badges {
+  position: relative;
+  top: -0.375rem;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.no-touch .productgrid-listview .productitem--actions .productitem--listview-badge .productitem__badges .productitem__badge,
+.productgrid-listview .productitem--actions .productitem--listview-badge .productitem__badges .productitem__badge {
+  position: static;
+  top: auto;
 }
 @media screen and (min-width: 860px) {
   .no-touch .productgrid-listview .productitem--actions,
@@ -17489,6 +17521,9 @@ shopify-payment-terms {
 .productitem__badge--soldout,
 .product__badge--sale,
 .productitem__badge--sale,
+.productitem__badge--instock,
+.productitem__badge--contact,
+.productitem__badge--clearance,
 .hotspot__badge {
   font-style: {{ fonts_type_body_style }};
   font-weight: {{ fonts_type_body_weight_bolder }};
@@ -17509,6 +17544,21 @@ shopify-payment-terms {
 .hotspot__badge--sale {
   color: #fff;
   background-color: {{ settings.color_product_sale_accent }};
+}
+
+.productitem__badge--instock {
+  color: #fff;
+  background-color: #8cb639;
+}
+
+.productitem__badge--contact {
+  color: #fff;
+  background-color: #3f3f3f;
+}
+
+.productitem__badge--clearance {
+  color: #fff;
+  background-color: #c83232;
 }
 
 .variant-selection__variants {
