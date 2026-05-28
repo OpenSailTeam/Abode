@@ -5925,6 +5925,58 @@ body .mdc-ripple-surface:hover:before {
   max-width: 110ch;
 }
 
+.collection-menu {
+  margin: {{ space_medium | divided_by: 16.0 | append: 'rem' }} 0 0;
+}
+
+.collection-menu__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: {{ space_xx_small | divided_by: 16.0 | append: 'rem' }};
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.collection-menu__item {
+  margin: 0;
+}
+
+.collection-menu__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: {{ space_xx_small | divided_by: 16.0 | append: 'rem' }} {{ space_x_small | divided_by: 16.0 | append: 'rem' }};
+  color: {{ settings.color_text }};
+  background-color: {{ color_background }};
+  border: 1px solid {{ color_border | color_modify: 'alpha', 0.2 }};
+  border-radius: 4px;
+  font-size: {{ font_size_body | times: 0.9375 | divided_by: 16.0 | append: 'rem' }};
+  font-weight: 600;
+  line-height: 1.25;
+  text-decoration: none;
+  opacity: 0.58;
+  transition: border-color 120ms ease, box-shadow 120ms ease, color 120ms ease, opacity 120ms ease;
+}
+
+.collection-menu__link:hover,
+.collection-menu__link:focus {
+  color: {{ color_links }};
+  border-color: {{ color_links | color_modify: 'alpha', 0.35 }};
+  box-shadow: 0 2px 8px {{ color_border | color_modify: 'alpha', 0.1 }};
+  opacity: 0.82;
+}
+
+.collection-menu__link--current,
+.collection-menu__link--current:hover,
+.collection-menu__link--current:focus {
+  color: {{ settings.color_button_text }};
+  background-color: {{ settings.color_button_background }};
+  border-color: {{ settings.color_button_background }};
+  box-shadow: none;
+  opacity: 1;
+}
+
 .subcollections-menu__item-image {
   position: relative;
   margin: 0;
@@ -10936,18 +10988,30 @@ html body .home-section--content .promo-mosaic--inner.promo-mosaic--compressed .
   margin-bottom: 0;
 }
 
-.pxs-image-with-text-button {
+.pxs-image-with-text-buttons {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
   margin-top: 20px;
 }
 @media (min-width: 720px) {
-  .pxs-image-with-text-button {
+  .pxs-image-with-text-buttons {
     margin-top: 28px;
   }
 }
 @media (min-width: 1024px) {
-  .pxs-image-with-text-button {
+  .pxs-image-with-text-buttons {
     margin-top: 36px;
   }
+}
+.pxs-image-with-text-content-position-x-left .pxs-image-with-text-buttons {
+  justify-content: flex-start;
+}
+.pxs-image-with-text-content-position-x-right .pxs-image-with-text-buttons {
+  justify-content: flex-end;
 }
 
 .pxs-image-with-text-link {
@@ -10956,6 +11020,7 @@ html body .home-section--content .promo-mosaic--inner.promo-mosaic--compressed .
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 1;
 }
 
 .pxs-map-section {
@@ -11229,13 +11294,26 @@ html body .home-section--content .promo-mosaic--inner.promo-mosaic--compressed .
   padding: 10px {{ space_xx_small | divided_by: 16.0 | append: 'rem' }};
   font-size: 0.875rem;
 }
+.pxs-image-with-text-button--secondary {
+  color: {{ settings.color_button_secondary_text }};
+  background-color: {{ settings.color_button_secondary_background }};
+  border: 1px solid {{ settings.color_button_secondary_border }};
+}
 .pxs-image-with-text-button:not(.disabled):hover {
   background: {{ color_background | color_mix: settings.color_button_background, 10 }};
   border: 1px solid {{ color_background | color_mix: settings.color_button_background, 10 }};
 }
+.pxs-image-with-text-button--secondary:not(.disabled):hover {
+  background: {{ color_background | color_mix: settings.color_button_secondary_background, 20 }};
+  border: 1px solid {{ color_button_secondary_border_hover }};
+}
 .pxs-image-with-text-button:active {
   background: {{ color_button_background_focus }};
   border: 1px solid {{ color_button_background_focus }};
+}
+.pxs-image-with-text-button--secondary:active {
+  background: {{ color_button_secondary_background_focus }};
+  border: 1px solid {{ color_button_secondary_border_hover }};
 }
 .pxs-image-with-text-button.mdc-ripple-surface.mdc-ripple-upgraded {
   --mdc-ripple-fg-opacity: 0.16;
@@ -11245,6 +11323,9 @@ html body .home-section--content .promo-mosaic--inner.promo-mosaic--compressed .
 }
 .pxs-image-with-text-button.mdc-ripple-surface::after {
   background-color: {{ settings.color_button_text }};
+}
+.pxs-image-with-text-button--secondary.mdc-ripple-surface::after {
+  background-color: {{ settings.color_button_secondary_text }};
 }
 @media screen and (min-width: 720px) {
   .pxs-image-with-text-button {

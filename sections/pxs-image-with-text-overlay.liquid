@@ -1,4 +1,10 @@
-{% assign onboarding = false %}
+{% liquid
+  assign onboarding = false
+  assign primary_button_text = section.settings.button_text
+  assign primary_button_link = section.settings.link
+  assign secondary_button_text = section.settings.secondary_button_text
+  assign secondary_button_link = section.settings.secondary_link
+%}
 
 {% if section.settings.image == blank %}
   {% assign onboarding = true %}
@@ -74,16 +80,44 @@
           </div>
         {% endif %}
 
-        {% if section.settings.button_text != blank %}
-          <span class="pxs-image-with-text-button">
-            {{ section.settings.button_text | escape }}
-          </span>
+        {% if primary_button_text != blank or secondary_button_text != blank %}
+          <div class="pxs-image-with-text-buttons">
+            {% if primary_button_text != blank %}
+              {% if primary_button_link != blank %}
+                <a
+                  class="pxs-image-with-text-button pxs-image-with-text-button--primary"
+                  href="{{ primary_button_link }}"
+                >
+                  {{ primary_button_text | escape }}
+                </a>
+              {% else %}
+                <span class="pxs-image-with-text-button pxs-image-with-text-button--primary">
+                  {{ primary_button_text | escape }}
+                </span>
+              {% endif %}
+            {% endif %}
+
+            {% if secondary_button_text != blank %}
+              {% if secondary_button_link != blank %}
+                <a
+                  class="pxs-image-with-text-button pxs-image-with-text-button--secondary"
+                  href="{{ secondary_button_link }}"
+                >
+                  {{ secondary_button_text | escape }}
+                </a>
+              {% else %}
+                <span class="pxs-image-with-text-button pxs-image-with-text-button--secondary">
+                  {{ secondary_button_text | escape }}
+                </span>
+              {% endif %}
+            {% endif %}
+          </div>
         {% endif %}
 
-        {% if section.settings.link != blank %}
+        {% if primary_button_link != blank %}
           <a
             class="pxs-image-with-text-link"
-            href="{{ section.settings.link }}"
+            href="{{ primary_button_link }}"
           ></a>
         {% endif %}
         </div>
@@ -259,13 +293,23 @@
     {
       "type": "url",
       "id": "link",
-      "label": "Link"
+      "label": "Primary link"
     },
     {
       "type": "text",
       "id": "button_text",
-      "label": "Button text",
+      "label": "Primary button text",
       "default": "Button"
+    },
+    {
+      "type": "url",
+      "id": "secondary_link",
+      "label": "Secondary link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_button_text",
+      "label": "Secondary button text"
     }
   ],
   "presets": [

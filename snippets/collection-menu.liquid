@@ -1,0 +1,54 @@
+{% doc %}
+  @param {linklist} menu - Menu to render for the collection navigation
+  @param {string} [submenu_title] - Optional top-level menu item title whose child links should be rendered
+  @param {collection} current_collection - Current collection used to highlight the matching menu item
+{% enddoc %}
+
+{% liquid
+  assign submenu_title = submenu_title | default: '' | strip
+  assign submenu_handle = submenu_title | handle
+  assign collection_menu_links = menu.links
+
+  if submenu_handle != blank
+    for menu_link in menu.links
+      if menu_link.handle == submenu_handle
+        assign collection_menu_links = menu_link.links
+        break
+      endif
+    endfor
+  endif
+%}
+
+{% if collection_menu_links.size > 0 %}
+  <nav class="collection-menu" aria-label="Collection menu">
+    <ul class="collection-menu__list">
+      {% for menu_link in collection_menu_links %}
+        {% liquid
+          assign is_current_collection = false
+
+          if menu_link.current
+            assign is_current_collection = true
+          elsif current_collection != blank
+            if menu_link.type == 'collection_link'
+              if menu_link.object.handle == current_collection.handle
+                assign is_current_collection = true
+              endif
+            endif
+          endif
+        %}
+
+        <li class="collection-menu__item">
+          <a
+            class="collection-menu__link{% if is_current_collection %} collection-menu__link--current{% endif %}"
+            href="{{ menu_link.url }}"
+            {% if is_current_collection %}
+              aria-current="page"
+            {% endif %}
+          >
+            {{ menu_link.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+{% endif %}

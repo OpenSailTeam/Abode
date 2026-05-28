@@ -19,14 +19,16 @@
         "section_height": "original",
         "image": "shopify://shop_images/ffh.jpg",
         "position": "center center",
-        "title": "SERVING SASKATOON FOR OVER TWO DECADES AND COUNTING",
-        "text": "<p>We continue to grow and serve with the principals that brought us this far. Our personable staff are well versed in home decor.</p>",
+        "title": "Serving Saskatoon Since 1997",
+        "text": "<p>We continue to grow and serve with the principles that brought us this far. Our personable staff are well versed in home decor.</p>",
         "content_position": "center-center",
         "color": "#ffffff",
         "overlay_background": "#030303",
         "overlay_opacity": 22,
         "link": "shopify://pages/contact",
-        "button_text": "GET IN TOUCH"
+        "button_text": "GET IN TOUCH",
+        "secondary_link": "",
+        "secondary_button_text": ""
       }
     },
     "1651852290c28403c3": {
@@ -150,7 +152,6 @@
     },
     "1651852333a15643a3": {
       "type": "dynamic-testimonials",
-      "disabled": true,
       "blocks": {
         "165185233304bba882-0": {
           "type": "testimonial",
@@ -182,15 +183,16 @@
         "165185233304bba882-1",
         "165185233304bba882-2"
       ],
+      "disabled": true,
       "settings": {
         "title": "Testimonials",
+        "testimonials_per_row": "3",
         "image_crop": "circle",
         "text_size": "medium"
       }
     },
     "1651852311452240e6": {
       "type": "dynamic-highlights-banner",
-      "disabled": true,
       "blocks": {
         "1651852311d0a1f944-0": {
           "type": "highlight",
@@ -236,6 +238,7 @@
         "1651852311d0a1f944-2",
         "1651852311d0a1f944-3"
       ],
+      "disabled": true,
       "settings": {
         "section_spacing": false,
         "section_width": "full-width",

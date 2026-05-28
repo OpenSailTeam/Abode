@@ -3,7 +3,7 @@
 {%- endcapture -%}
 {% assign to_hash = to_hash | replace: ' ', '' | sha256 %}
 
-{% assign filter_block = nil %}
+{% assign filter_block = null %}
 {% assign sidebar_blocks = false %}
 {% assign menu_block_count = 0 %}
 
@@ -30,7 +30,6 @@
   {% endif %}
 {%- endcapture -%}
 
-
 <script
   type="application/json"
   data-section-type="{{ section_type | strip }}"
@@ -54,10 +53,19 @@
   }
 </script>
 
-
 {% assign show_sidebar = false %}
 {% assign show_filters = true %}
 {% assign show_filter_trigger = false %}
+{% assign has_subcollection_links = false %}
+{% assign show_subcollections = false %}
+
+{% if linklists[collection.handle].links.size > 0 %}
+  {% assign has_subcollection_links = true %}
+{% endif %}
+
+{% if section.settings.enable_subcollection and has_subcollection_links %}
+  {% assign show_subcollections = true %}
+{% endif %}
 
 {% style %}
   #shopify-section-{{ section.id }} .subcollections-list__content {
@@ -75,7 +83,7 @@
   }
 {% endstyle %}
 
-{% if filter_block == nil or filter_block.settings.filter_option == 'tag' and collection.all_tags.size == 0 %}
+{% if filter_block == null or filter_block.settings.filter_option == 'tag' and collection.all_tags.size == 0 %}
   {% assign show_filters = false %}
 {% endif %}
 
@@ -124,16 +132,9 @@
 {% paginate collection.products by paginate_by %}
   <div class="productgrid--outer {{ collection_classes | strip_newlines }}" data-productgrid-outer>
     <div class="productgrid--masthead">
-
       {% if section.settings.show_collection_image and collection.image %}
         <figure class="collection--image">
-          {%
-            render 'rimg',
-            img: collection.image,
-            size: '1350x',
-            lazy: true,
-            canvas: true
-          %}
+          {% render 'rimg', img: collection.image, size: '1350x', lazy: true, canvas: true %}
         </figure>
       {% endif %}
 
@@ -147,26 +148,24 @@
         </div>
       {% endif %}
 
-      {% if section.settings.enable_subcollection and linklists[collection.handle].links.size > 0 %}
-        {%
-          render 'subcollections-collection',
-          type: 'block',
-          block: section,
-          layout_type: 'slideshow',
+      {% if section.settings.enable_collection_menu and section.settings.collection_menu != blank %}
+        {% render 'collection-menu',
+          menu: linklists[section.settings.collection_menu],
+          submenu_title: section.settings.collection_menu_submenu_title,
+          current_collection: collection
         %}
+      {% endif %}
+
+      {% if show_subcollections %}
+        {% render 'subcollections-collection', type: 'block', block: section, layout_type: 'slideshow' %}
         <div class="subcollections-collection__border"></div>
       {% endif %}
     </div>
     {% if show_sidebar %}
-      {%
-        render 'product-grid-sidebar',
-        menu_depth: section.settings.menu_depth_range,
-        context: collection
-      %}
+      {% render 'product-grid-sidebar', menu_depth: section.settings.menu_depth_range, context: collection %}
     {% endif %}
 
     <div class="productgrid--wrapper">
-
       {% if show_filter_trigger or section.settings.sort_by or section.settings.show_by or section.settings.grid_list %}
         {% capture utility_class %}
           productgrid--utils
@@ -224,10 +223,7 @@
           {% endif %}
 
           {%- if section.settings.sort_by -%}
-            {%-
-              render 'product-grid-sortby',
-              type: 'select',
-            -%}
+            {%- render 'product-grid-sortby', type: 'select' -%}
           {%- endif -%}
 
           {%- if section.settings.show_by or section.settings.grid_list -%}
@@ -242,11 +238,7 @@
             >
               <div class="utils-view-container">
                 {%- if section.settings.show_by -%}
-                  {%-
-                    render 'product-grid-showby',
-                    show_by: paginate_by,
-                    filter_type: filter_type
-                  -%}
+                  {%- render 'product-grid-showby', show_by: paginate_by, filter_type: filter_type -%}
                 {%- endif -%}
 
                 {% if section.settings.grid_list %}
@@ -279,7 +271,6 @@
       {% endif %}
 
       {% if filter_block.settings.filter_option == 'faceted' %}
-
         {% assign active_filters = false %}
         {% for filter in collection.filters %}
           {% if filter.active_values.size > 0 or filter.min_value.value or filter.max_value.value %}
@@ -290,10 +281,7 @@
 
         {% if active_filters == true %}
           <div class="productgrid--filters">
-            {%-
-              render 'product-grid-filters-active',
-              context: collection,
-            %}
+            {%- render 'product-grid-filters-active', context: collection %}
           </div>
         {% endif %}
       {% else %}
@@ -314,10 +302,7 @@
           data-productgrid-items
         >
           {% for product in collection.products %}
-            {%
-              render 'product-grid-item',
-              product: product
-            %}
+            {% render 'product-grid-item', product: product %}
           {% endfor %}
         </ul>
       {% else %}
@@ -336,19 +321,13 @@
         </div>
       {% endif %}
 
-      {%
-        render 'pagination', paginate: paginate,
-        grid_list: true
-      %}
+      {% render 'pagination', paginate: paginate, grid_list: true %}
     </div>
   </div>
 {% endpaginate %}
 
 {%- if section.settings.sort_by -%}
-  {%-
-    render 'product-grid-sortby',
-    type: 'modal',
-  -%}
+  {%- render 'product-grid-sortby', type: 'modal' -%}
 {%- endif -%}
 
 {% render 'quick-shop' %}
@@ -426,6 +405,27 @@
         }
       ],
       "default": "grid-view"
+    },
+    {
+      "type": "header",
+      "content": "Collection menu"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_collection_menu",
+      "label": "Show collection menu",
+      "default": false
+    },
+    {
+      "type": "link_list",
+      "id": "collection_menu",
+      "label": "Menu"
+    },
+    {
+      "type": "text",
+      "id": "collection_menu_submenu_title",
+      "label": "Submenu item title",
+      "info": "Optional. Enter a top-level menu item title to show that item's child links instead of the full menu."
     },
     {
       "type": "header",
@@ -649,11 +649,9 @@
           "label": "Exclude groups",
           "info": "Specify which group(s) should be hidden from your customers, like “Color, Brand, Size”. This will hide the group heading along with all of the tags within the group."
         }
-
       ],
       "limit": 1
     }
   ]
 }
-
 {% endschema %}

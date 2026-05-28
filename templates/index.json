@@ -9,6 +9,81 @@
  */
 {
   "sections": {
+    "pxs_image_with_text_overlay_QnXF7A": {
+      "type": "pxs-image-with-text-overlay",
+      "name": "Image with text overlay",
+      "settings": {
+        "section_height": "medium",
+        "image": "shopify://shop_images/Leka_top.jpg",
+        "position": "center center",
+        "title": "Solid Wood Furniture in Saskatoon",
+        "text": "<p>Quality furniture, thoughtful options, and a friendly showroom experience. Visit us in Saskatoon to explore solid wood pieces, contemporary styles, custom finishes, and home decor with help from our knowledgeable team.</p>",
+        "content_position": "center-center",
+        "color": "#ffffff",
+        "overlay_background": "#000000",
+        "overlay_opacity": 50,
+        "link": "shopify://collections/all-products",
+        "button_text": "View our catalog",
+        "secondary_link": "https://goo.gl/maps/AT6gAQrX4LTCn8mS7",
+        "secondary_button_text": "Visit our showroom"
+      }
+    },
+    "dynamic_highlights_banner": {
+      "type": "dynamic-highlights-banner",
+      "blocks": {
+        "highlight-1": {
+          "type": "highlight",
+          "settings": {
+            "icon": "icon-delivery-handoff",
+            "title": "Delivery Options",
+            "text": "<p>Delivery Options Available, Inquire now</p><p><a href=\"mailto:abodefurniture@sasktel.net\" title=\"mailto:abodefurniture@sasktel.net\">abodefurniture@sasktel.net</a></p>",
+            "link": ""
+          }
+        },
+        "highlight-2": {
+          "type": "highlight",
+          "settings": {
+            "icon": "icon-cell-phone",
+            "title": "Contact Us",
+            "text": "<p>306-934-1733</p><p><a href=\"mailto:abodefurniture@sasktel.net\"><span style=\"text-decoration:underline\">abodefurniture@sasktel.net</span></a></p>",
+            "link": ""
+          }
+        },
+        "highlight-3": {
+          "type": "highlight",
+          "settings": {
+            "icon": "icon-store",
+            "title": "Store Hours",
+            "text": "<p><strong>Mon - Sat:</strong> 10AM - 6PM<br/><strong>Sunday:</strong> Closed</p>",
+            "link": ""
+          }
+        },
+        "highlight-4": {
+          "type": "highlight",
+          "settings": {
+            "icon": "icon-pin",
+            "title": "Location",
+            "text": "<p><a href=\"https://goo.gl/maps/AT6gAQrX4LTCn8mS7\" target=\"_blank\" title=\"https://goo.gl/maps/AT6gAQrX4LTCn8mS7\">819 2nd Ave N, </a></p><p><a href=\"https://goo.gl/maps/AT6gAQrX4LTCn8mS7\" target=\"_blank\" title=\"https://goo.gl/maps/AT6gAQrX4LTCn8mS7\">Saskatoon, SK</a></p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "highlight-1",
+        "highlight-2",
+        "highlight-3",
+        "highlight-4"
+      ],
+      "settings": {
+        "section_spacing": false,
+        "section_width": "content-width",
+        "icon_layout": "center",
+        "color": "#1d1d1d",
+        "icon_color": "#8cb639",
+        "background_color": "#ffffff",
+        "mobile_layout": "grid"
+      }
+    },
     "dynamic_slideshow_j8JDaj": {
       "type": "dynamic-slideshow",
       "blocks": {
@@ -128,7 +203,7 @@
         "enable_autoplay": true,
         "autoplay_duration": 8,
         "slideshow_width": "content",
-        "slideshow_height": "large",
+        "slideshow_height": "medium",
         "slideshow_height_mobile": "medium",
         "slideshow_text_below_image": true
       }
@@ -314,63 +389,6 @@
         "textbox_text_position": "right"
       }
     },
-    "dynamic_highlights_banner": {
-      "type": "dynamic-highlights-banner",
-      "blocks": {
-        "highlight-1": {
-          "type": "highlight",
-          "settings": {
-            "icon": "icon-delivery-handoff",
-            "title": "Delivery Options",
-            "text": "<p>Delivery Options Available, Inquire now</p><p><a href=\"mailto:abodefurniture@sasktel.net\" title=\"mailto:abodefurniture@sasktel.net\">abodefurniture@sasktel.net</a></p>",
-            "link": ""
-          }
-        },
-        "highlight-2": {
-          "type": "highlight",
-          "settings": {
-            "icon": "icon-cell-phone",
-            "title": "Contact Us",
-            "text": "<p>306-934-1733</p><p><a href=\"mailto:abodefurniture@sasktel.net\"><span style=\"text-decoration:underline\">abodefurniture@sasktel.net</span></a></p>",
-            "link": ""
-          }
-        },
-        "highlight-3": {
-          "type": "highlight",
-          "disabled": true,
-          "settings": {
-            "icon": "icon-chat-alternate",
-            "title": "Chat With Us",
-            "text": "<p>We Have Friendly Staff</p>",
-            "link": ""
-          }
-        },
-        "highlight-4": {
-          "type": "highlight",
-          "settings": {
-            "icon": "icon-pin",
-            "title": "Location",
-            "text": "<p><a href=\"https://goo.gl/maps/AT6gAQrX4LTCn8mS7\" target=\"_blank\" title=\"https://goo.gl/maps/AT6gAQrX4LTCn8mS7\">819 2nd Ave N, </a></p><p><a href=\"https://goo.gl/maps/AT6gAQrX4LTCn8mS7\" target=\"_blank\" title=\"https://goo.gl/maps/AT6gAQrX4LTCn8mS7\">Saskatoon, SK</a></p>",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "highlight-1",
-        "highlight-2",
-        "highlight-3",
-        "highlight-4"
-      ],
-      "settings": {
-        "section_spacing": false,
-        "section_width": "content-width",
-        "icon_layout": "center",
-        "color": "#1d1d1d",
-        "icon_color": "#8cb639",
-        "background_color": "#ffffff",
-        "mobile_layout": "grid"
-      }
-    },
     "dynamic_collection_list_BYYMhk": {
       "type": "dynamic-collection-list",
       "blocks": {
@@ -410,11 +428,11 @@
         "collection_ygzUNH"
       ],
       "settings": {
-        "title": "Shop By Category",
+        "title": "Shop By Room",
         "thumbnail_columns_desktop": 4,
         "thumbnail_columns_mobile": 2,
         "image-crop": "original",
-        "cta_label": "View All Categories",
+        "cta_label": "View all",
         "cta_link": "shopify://collections",
         "cta_button_style": "primary"
       }
@@ -426,7 +444,7 @@
         "layout": "grid",
         "collection": "in-stock",
         "product_count": 5,
-        "cta_label": "View All Products",
+        "cta_label": "View stock on-hand",
         "cta_button_style": "primary"
       }
     },
@@ -437,7 +455,7 @@
         "layout": "grid",
         "collection": "clearance",
         "product_count": 5,
-        "cta_label": "View All Clearance",
+        "cta_label": "View all clearance",
         "cta_button_style": "primary"
       }
     },
@@ -541,7 +559,9 @@
         "overlay_background": "#8cb639",
         "overlay_opacity": 100,
         "link": "",
-        "button_text": ""
+        "button_text": "",
+        "secondary_link": "",
+        "secondary_button_text": ""
       }
     },
     "1645204248dc08f131": {
@@ -552,7 +572,7 @@
           "settings": {
             "icon": "icon-delivery-handoff",
             "title": "Delivery Options",
-            "text": "<p>We are currently only </p><p>offering in store pick up</p>",
+            "text": "<p>Delivery Options Available, Inquire now</p><p><a href=\"mailto:abodefurniture@sasktel.net\" title=\"mailto:abodefurniture@sasktel.net\">abodefurniture@sasktel.net</a></p>",
             "link": ""
           }
         },
@@ -567,11 +587,10 @@
         },
         "1645204247a136b0fd-2": {
           "type": "highlight",
-          "disabled": true,
           "settings": {
-            "icon": "icon-chat-alternate",
-            "title": "Chat With Us",
-            "text": "<p>We offer 24-hour chat support</p>",
+            "icon": "icon-store",
+            "title": "Store Hours",
+            "text": "<p><strong>Mon - Sat:</strong> 10AM - 6PM<br/><strong>Sunday:</strong> Closed</p>",
             "link": ""
           }
         },
@@ -580,7 +599,7 @@
           "settings": {
             "icon": "icon-pin",
             "title": "Location",
-            "text": "<p>Saskatoon, SK</p>",
+            "text": "<p><a href=\"https://goo.gl/maps/AT6gAQrX4LTCn8mS7\" target=\"_blank\" title=\"https://goo.gl/maps/AT6gAQrX4LTCn8mS7\">819 2nd Ave N, </a></p><p><a href=\"https://goo.gl/maps/AT6gAQrX4LTCn8mS7\" target=\"_blank\" title=\"https://goo.gl/maps/AT6gAQrX4LTCn8mS7\">Saskatoon, SK</a></p>",
             "link": ""
           }
         }
@@ -603,9 +622,10 @@
     }
   },
   "order": [
+    "pxs_image_with_text_overlay_QnXF7A",
+    "dynamic_highlights_banner",
     "dynamic_slideshow_j8JDaj",
     "shoppable_slideshow_xyApjc",
-    "dynamic_highlights_banner",
     "dynamic_collection_list_BYYMhk",
     "1655746474430d28f1",
     "13402223-688a-453c-a188-422b5eeaa135",

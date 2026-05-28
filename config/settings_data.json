@@ -149,6 +149,13 @@
       "static-footer": {
         "type": "static-footer",
         "blocks": {
+          "rich_text_XrNwtQ": {
+            "type": "rich_text",
+            "settings": {
+              "title": "Store Hours",
+              "text": "<p><strong>Mon - Sat:</strong> 10AM - 6PM<br/><strong>Sunday:</strong> Closed<br/><br/>Address:<br/><a href=\"https://goo.gl/maps/AT6gAQrX4LTCn8mS7\" target=\"_blank\" title=\"https://goo.gl/maps/AT6gAQrX4LTCn8mS7\">819 2nd Ave N, </a><br/><a href=\"https://goo.gl/maps/AT6gAQrX4LTCn8mS7\" target=\"_blank\" title=\"https://goo.gl/maps/AT6gAQrX4LTCn8mS7\">Saskatoon, SK</a></p>"
+            }
+          },
           "static-footer-0": {
             "type": "menu",
             "settings": {
@@ -170,21 +177,14 @@
           "1493171899575": {
             "type": "social_accounts",
             "settings": {}
-          },
-          "f43f2feb-338c-4597-aaad-6ecfe1e69cc7": {
-            "type": "newsletter",
-            "settings": {
-              "title": "Get Updates",
-              "text": "<p>Join our newsletter</p>"
-            }
           }
         },
         "block_order": [
+          "rich_text_XrNwtQ",
           "static-footer-0",
           "1498182586280",
           "1498182572847",
-          "1493171899575",
-          "f43f2feb-338c-4597-aaad-6ecfe1e69cc7"
+          "1493171899575"
         ],
         "settings": {
           "payment_icons": true,
