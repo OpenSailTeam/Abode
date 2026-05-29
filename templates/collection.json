@@ -17,7 +17,7 @@
           "settings": {
             "filter_option": "faceted",
             "filter_groups": "expand_all",
-            "show_filter_product_count": false,
+            "show_filter_product_count": true,
             "filter_style": "tags",
             "filter_limit": "999",
             "grid_categories": "",
