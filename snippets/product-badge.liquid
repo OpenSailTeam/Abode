@@ -138,7 +138,7 @@
 
 {% assign has_product_card_badges = false %}
 {% if show_product_card_badges %}
-  {% if product.tags contains 'instock' %}
+  {% if product.tags contains 'instock' and product_available %}
     {% assign has_product_card_badges = true %}
   {% endif %}
 
@@ -159,7 +159,7 @@
 {% if show_product_card_badges %}
   {% if has_product_card_badges or show_sale_badge or show_soldout_badge %}
     <div class="{{ class_root }}__badges">
-      {% if product.tags contains 'instock' %}
+      {% if product.tags contains 'instock' and product_available %}
         <span class="{{ class_root }}__badge {{ class_root }}__badge--instock">
           In stock
         </span>

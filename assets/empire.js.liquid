@@ -34693,15 +34693,7 @@ class SearchForm {
 
     if (this.isLiveSearch && !terms) {
       return;
-    } // Adds `*` after each word in search terms, doesn't add to last word
-
-
-    if (terms.indexOf(' ') > 0) {
-      terms = terms.split(' ').join('* ').trim();
-    } // Adds `*` at the end of the search terms
-
-
-    terms = `${terms}*`; // Add field filter
+    } // Add field filter without broadening the customer's search terms
 
     terms = this.filter && this.filter.value ? `${terms} ${this.filter.value}` : terms; // Update value
 
@@ -35171,15 +35163,7 @@ class LiveSearch {
       // Clear previous results
       this.$searchResults.html('');
 
-      this._openFlyDown(true); // Adds `*` after each word in search terms, doesn't add to last word
-
-
-      if (terms.indexOf(' ') > 0) {
-        terms = terms.split(' ').join('* ').trim();
-      } // Adds `*` at the end of the search terms
-
-
-      terms = `${terms}*`;
+      this._openFlyDown(true);
       const filter = this.$filter[0]; // Add field filter
 
       terms = filter && filter.value ? `${terms} ${filter.value}` : terms;

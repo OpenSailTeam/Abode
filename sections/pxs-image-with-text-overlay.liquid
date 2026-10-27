@@ -4,6 +4,10 @@
   assign primary_button_link = section.settings.link
   assign secondary_button_text = section.settings.secondary_button_text
   assign secondary_button_link = section.settings.secondary_link
+  assign heading_tag = 'h2'
+  if request.page_type == 'index'
+    assign heading_tag = 'h1'
+  endif
 %}
 
 {% if section.settings.image == blank %}
@@ -65,11 +69,11 @@
           style="color: {{ section.settings.color }};"
         >
         {% if section.settings.title != blank %}
-          <h2
+          <{{ heading_tag }}
             class="pxs-image-with-text-heading"
           >
             {{ section.settings.title | escape }}
-          </h2>
+          </{{ heading_tag }}>
         {% endif %}
 
         {% if section.settings.text != blank %}
