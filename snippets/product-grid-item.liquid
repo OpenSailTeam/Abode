@@ -11,6 +11,14 @@
 {% assign enable_quickshop = settings.product_grid_enable_quickshop %}
 {% assign atc_display = settings.product_grid_show_atc %}
 {% assign atc_button = settings.product_grid_show_atc_button %}
+
+{% assign order_only = true %}
+{% if product.tags contains 'instock' or product.tags contains 'clearance' %}
+  {% assign order_only = false %}
+{% endif %}
+{% if order_only %}
+  {% assign atc_button = false %}
+{% endif %}
 {% assign product_ratings_reviews = settings.product_ratings_reviews %}
 {% assign product_ratings_star_display = settings.product_ratings_star_display %}
 
