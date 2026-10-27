@@ -2,3 +2,6 @@
 /.prettierrc.json
 /.shopifyignore
 /.theme-check.yml
+
+# Store catalog backups and migration run journals
+/output/product-ordering/
