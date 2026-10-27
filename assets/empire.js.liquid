@@ -32310,7 +32310,7 @@ class ProductGridItem {
   /**
    * Get height of element, and combined height of element + actions
    *
-   * @returns {{heightBase, heightExpanded: *}}
+   * @returns {{ heightBase }}
    * @private
    */
 
@@ -34693,15 +34693,7 @@ class SearchForm {
 
     if (this.isLiveSearch && !terms) {
       return;
-    } // Adds `*` after each word in search terms, doesn't add to last word
-
-
-    if (terms.indexOf(' ') > 0) {
-      terms = terms.split(' ').join('* ').trim();
-    } // Adds `*` at the end of the search terms
-
-
-    terms = `${terms}*`; // Add field filter
+    } // Add field filter without broadening the customer's search terms
 
     terms = this.filter && this.filter.value ? `${terms} ${this.filter.value}` : terms; // Update value
 
@@ -35171,15 +35163,7 @@ class LiveSearch {
       // Clear previous results
       this.$searchResults.html('');
 
-      this._openFlyDown(true); // Adds `*` after each word in search terms, doesn't add to last word
-
-
-      if (terms.indexOf(' ') > 0) {
-        terms = terms.split(' ').join('* ').trim();
-      } // Adds `*` at the end of the search terms
-
-
-      terms = `${terms}*`;
+      this._openFlyDown(true);
       const filter = this.$filter[0]; // Add field filter
 
       terms = filter && filter.value ? `${terms} ${filter.value}` : terms;
@@ -37771,7 +37755,7 @@ class DynamicTwitterFeed_DynamicTwitterFeed {
    * Retrieve information about user who tweeted
    *
    * @param el
-   * @returns {{$avatar: *, link: *, name, screenName}}
+   * @returns {{ avatar }}
    * @private
    */
 
@@ -37793,7 +37777,7 @@ class DynamicTwitterFeed_DynamicTwitterFeed {
    * Retrieve link to tweet, and when it was tweeted
    *
    * @param el
-   * @returns {{link: *, postedAt: *}}
+   * @returns {{ link }}
    * @private
    */
 
@@ -43584,3 +43568,19 @@ if (checkPolyfills.length) {
 
 /******/ })()
 ;
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{{heightBase, heightExpanded: *}}"
+  to: "{{ heightBase }}"
+  position: 946333..946349
+- from: "{{$avatar: *, link: *, name, screenName}}"
+  to: "{{ avatar }}"
+  position: 1103633..1103645
+- from: "{{link: *, postedAt: *}}"
+  to: "{{ link }}"
+  position: 1104129..1104139
+{% endcomment %}

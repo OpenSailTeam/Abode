@@ -1,4 +1,9 @@
-{% if product.tags contains 'contact' %}
+{% assign order_only = true %}
+{% if product.tags contains 'instock' or product.tags contains 'clearance' %}
+  {% assign order_only = false %}
+{% endif %}
+
+{% if order_only %}
   <div class="product-contact-notice" role="note">
     <p class="product-contact-notice__title">Order-only item</p>
     <p class="product-contact-notice__text">

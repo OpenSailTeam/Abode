@@ -4,8 +4,6 @@
 
   @param product_available {Bool}
 
-  @param contact {Bool}
-
   @param on_sale {Bool}
     If a product, or one of it's variants is on sale
 
@@ -111,14 +109,14 @@
 {% assign savings_money_single = selected_variant.compare_at_price | minus: selected_variant.price %}
 {% assign savings_percentage_single = savings_money_single | times: 1.0 | divided_by: selected_variant.compare_at_price | times: 100.0 | round %}
 
-{% assign product_available = product_available | default: product.available %}
-{% assign contact = contact | default: false %}
+{% assign product_available = product_available | default: product.available, allow_false: true %}
 {% assign saved_price_single = savings_money_single | money %}
 {% assign saved_price_range = savings_money_range | money %}
 {% assign on_sale = on_sale | default: true %}
 
-{% if product.tags contains 'contact' %}
-  {% assign contact = true %}
+{% assign order_only = true %}
+{% if product.tags contains 'instock' or product.tags contains 'clearance' %}
+  {% assign order_only = false %}
 {% endif %}
 
 {% if savings_money_range <= 0 %}
@@ -138,11 +136,11 @@
 
 {% assign has_product_card_badges = false %}
 {% if show_product_card_badges %}
-  {% if product.tags contains 'instock' %}
+  {% if product.tags contains 'instock' and product_available %}
     {% assign has_product_card_badges = true %}
   {% endif %}
 
-  {% if product.tags contains 'contact' %}
+  {% if order_only %}
     {% assign has_product_card_badges = true %}
   {% endif %}
 
@@ -152,20 +150,20 @@
 {% endif %}
 
 {% assign show_soldout_badge = false %}
-{% if product_available != true and contact != true %}
+{% if product_available != true and order_only != true %}
   {% assign show_soldout_badge = true %}
 {% endif %}
 
 {% if show_product_card_badges %}
   {% if has_product_card_badges or show_sale_badge or show_soldout_badge %}
     <div class="{{ class_root }}__badges">
-      {% if product.tags contains 'instock' %}
+      {% if product.tags contains 'instock' and product_available %}
         <span class="{{ class_root }}__badge {{ class_root }}__badge--instock">
           In stock
         </span>
       {% endif %}
 
-      {% if product.tags contains 'contact' %}
+      {% if order_only %}
         <span class="{{ class_root }}__badge {{ class_root }}__badge--contact">
           Order only
         </span>

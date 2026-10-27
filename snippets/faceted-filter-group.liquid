@@ -64,12 +64,12 @@
               {% if value.active -%}
                 {% assign animation_state = 'checked' %}
                 data-filter-active
-                data-url="{{ value.url_to_remove | url_encode }}"
-                href="{{ value.url_to_remove | url_encode }}"
+                data-url="{{ value.url_to_remove }}"
+                href="{{ value.url_to_remove }}"
               {% else %}
-                  {% assign animation_state = 'unchecked' %}
-                data-url="{{ value.url_to_add | url_encode }}"
-                href="{{ value.url_to_add | url_encode }}"
+                {% assign animation_state = 'unchecked' %}
+                data-url="{{ value.url_to_add }}"
+                href="{{ value.url_to_add }}"
               {%- endif %}
               {% if value.count == 0 and value.active == false -%}
                 data-disabled
@@ -89,6 +89,7 @@
           </li>
         {%- endfor -%}
       </ul>
+
     {% when 'price_range' %}
       <form
         class="collection-filters__price-range-form"
@@ -129,9 +130,10 @@
                 "
                 for="filter-{{ filter.label }}-{{ forloop.index0 }}-from"
               >
-                  From
+                From
               </label>
           </div>
+
           <div class="collection-filters__filter-range--to">
             <span class="collection-filters__filter-range-currency">{{ cart.currency.symbol }}</span>
             <input
