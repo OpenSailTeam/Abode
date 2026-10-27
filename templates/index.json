@@ -151,6 +151,7 @@
         },
         "slide_ckwcDy": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "background_image": "shopify://shop_images/recliner.jpg",
             "mobile_background_image": "shopify://shop_images/recliner.jpg",
