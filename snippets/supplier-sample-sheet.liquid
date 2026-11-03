@@ -1,0 +1,52 @@
+{% doc %}
+  Renders a sample sheet with individually named samples and optional notes.
+
+  @param {metaobject} sample_sheet - The sample sheet to display.
+{% enddoc %}
+
+{%- capture samples -%}
+  {%- for sample in sample_sheet.samples.value -%}
+    {%- assign image = sample.image.value.preview_image -%}
+    {%- if image == blank or sample.name.value == blank -%}
+      {%- continue -%}
+    {%- endif -%}
+    {%- assign image_alt = image.alt | default: sample.name.value -%}
+    <figure class="supplier-options__sample">
+      <a
+        class="supplier-options__image-link"
+        href="{{ image | image_url: width: image.width }}"
+        aria-label="{{ 'supplier_pages.options.view_image' | t: name: sample.name.value | escape }}"
+      >
+        {{- image | image_url: width: 900 | image_tag:
+          class: 'supplier-options__image',
+          loading: 'lazy',
+          widths: '180, 360, 600, 900',
+          sizes: '(min-width: 720px) 210px, calc((100vw - 40px) / 2)',
+          alt: image_alt
+        -}}
+      </a>
+      <figcaption class="supplier-options__caption">
+        <span class="supplier-options__sample-name">{{ sample.name.value | escape }}</span>
+        {%- if sample.code.value != blank -%}
+          <span class="supplier-options__sample-code">{{ sample.code.value | escape }}</span>
+        {%- endif -%}
+      </figcaption>
+      {%- if sample.notes.value != blank -%}
+        <div class="rte supplier-options__sample-notes">{{ sample.notes | metafield_tag }}</div>
+      {%- endif -%}
+    </figure>
+  {%- endfor -%}
+{%- endcapture -%}
+
+{%- if samples != blank and sample_sheet.name.value != blank -%}
+  <section class="supplier-options__sheet">
+    <h4>{{ sample_sheet.name.value | escape }}</h4>
+    {%- if sample_sheet.description.value != blank -%}
+      <div class="rte supplier-options__description">{{ sample_sheet.description | metafield_tag }}</div>
+    {%- endif -%}
+    <div class="supplier-options__samples">{{ samples }}</div>
+    {%- if sample_sheet.notes.value != blank -%}
+      <div class="rte supplier-options__notes">{{ sample_sheet.notes | metafield_tag }}</div>
+    {%- endif -%}
+  </section>
+{%- endif -%}

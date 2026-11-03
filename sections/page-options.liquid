@@ -1,0 +1,154 @@
+<article class="site-page" data-template-page>
+  <header class="page-masthead">
+    <h1 class="page-title">{{ page.title | escape }}</h1>
+  </header>
+
+  <div class="page-content supplier-options">
+    {%- paginate metaobjects.supplier.values by 250 -%}
+      {%- assign suppliers = metaobjects.supplier.values | sort_natural: 'name' -%}
+      {%- capture supplier_content -%}
+        {%- for supplier in suppliers -%}
+          {%- if supplier.name.value == blank -%}
+            {%- continue -%}
+          {%- endif -%}
+          {%- capture categories -%}
+            {%- for category in supplier.options_categories.value -%}
+              {%- if category.name.value == blank -%}
+                {%- continue -%}
+              {%- endif -%}
+              {%- capture sample_sheets -%}
+                {%- for sample_sheet in category.sample_sheets.value -%}
+                  {%- render 'supplier-sample-sheet', sample_sheet: sample_sheet -%}
+                {%- endfor -%}
+              {%- endcapture -%}
+              {%- if sample_sheets != blank -%}
+                <section class="supplier-options__category">
+                  <h3>{{ category.name.value | escape }}</h3>
+                  {%- if category.description.value != blank -%}
+                    <div class="rte supplier-options__description">{{ category.description | metafield_tag }}</div>
+                  {%- endif -%}
+                  {{ sample_sheets }}
+                </section>
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endcapture -%}
+          {%- if categories != blank -%}
+            <section class="supplier-options__supplier">
+              <h2>{{ supplier.name.value | escape }}</h2>
+              {{ categories }}
+            </section>
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endcapture -%}
+
+      {%- if supplier_content != blank -%}
+        {{ supplier_content }}
+      {%- else -%}
+        <p>{{ 'supplier_pages.options.empty' | t }}</p>
+      {%- endif -%}
+
+      {%- if paginate.pages > 1 -%}
+        {% render 'pagination', paginate: paginate %}
+      {%- endif -%}
+    {%- endpaginate -%}
+  </div>
+</article>
+
+{% stylesheet %}
+  .supplier-options h2,
+  .supplier-options h3,
+  .supplier-options h4 {
+    margin: 0 0 1rem;
+  }
+
+  .supplier-options h2 {
+    font-size: var(--font-size-heading-2);
+  }
+
+  .supplier-options h3 {
+    font-size: var(--font-size-heading-3);
+  }
+
+  .supplier-options h4 {
+    font-size: var(--font-size-heading-4);
+  }
+
+  .supplier-options__supplier + .supplier-options__supplier {
+    margin-top: 50px;
+  }
+
+  .supplier-options__category,
+  .supplier-options__sheet {
+    margin-top: 30px;
+  }
+
+  .supplier-options__samples {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px 20px;
+    margin-top: 20px;
+  }
+
+  @media screen and (min-width: 720px) {
+    .supplier-options__samples {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .supplier-options__sample {
+    min-width: 0;
+    margin: 0;
+  }
+
+  .supplier-options__image-link {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .supplier-options__image-link:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+  }
+
+  .supplier-options__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+  }
+
+  .supplier-options__caption {
+    margin-top: 12px;
+    text-align: center;
+    overflow-wrap: anywhere;
+  }
+
+  .supplier-options__sample-name,
+  .supplier-options__sample-code {
+    display: block;
+  }
+
+  .supplier-options__sample-code {
+    margin-top: 4px;
+    font-size: 0.875em;
+  }
+
+  .supplier-options__sample-notes {
+    margin-top: 12px;
+    font-size: 0.875em;
+  }
+
+  .supplier-options__notes {
+    margin-top: 20px;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Options",
+  "settings": []
+}
+{% endschema %}
