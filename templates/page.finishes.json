@@ -11,7 +11,14 @@
   "sections": {
     "main": {
       "type": "page-options",
-      "settings": {}
+      "settings": {
+        "supplier_order": [
+          "gid://shopify/Metaobject/664925077759",
+          "gid://shopify/Metaobject/664938545407",
+          "gid://shopify/Metaobject/664938971391"
+        ],
+        "only_selected_suppliers": false
+      }
     }
   },
   "order": ["main"]

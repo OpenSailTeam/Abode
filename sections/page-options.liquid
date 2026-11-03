@@ -6,8 +6,20 @@
   <div class="page-content supplier-options">
     {%- paginate metaobjects.supplier.values by 250 -%}
       {%- assign suppliers = metaobjects.supplier.values | sort_natural: 'name' -%}
+      {%- assign selected_suppliers = section.settings.supplier_order -%}
+      {%- if section.settings.only_selected_suppliers -%}
+        {%- assign suppliers = selected_suppliers -%}
+      {%- elsif selected_suppliers != blank -%}
+        {%- assign suppliers = selected_suppliers | concat: suppliers -%}
+      {%- endif -%}
+      {%- assign seen_supplier_ids = '' -%}
       {%- capture supplier_content -%}
         {%- for supplier in suppliers -%}
+          {%- assign supplier_id = supplier.system.id | prepend: '|' | append: '|' -%}
+          {%- if seen_supplier_ids contains supplier_id -%}
+            {%- continue -%}
+          {%- endif -%}
+          {%- assign seen_supplier_ids = seen_supplier_ids | append: supplier_id -%}
           {%- if supplier.name.value == blank -%}
             {%- continue -%}
           {%- endif -%}
@@ -47,9 +59,11 @@
         <p>{{ 'supplier_pages.options.empty' | t }}</p>
       {%- endif -%}
 
-      {%- if paginate.pages > 1 -%}
-        {% render 'pagination', paginate: paginate %}
-      {%- endif -%}
+      {%- unless section.settings.only_selected_suppliers -%}
+        {%- if paginate.pages > 1 -%}
+          {% render 'pagination', paginate: paginate %}
+        {%- endif -%}
+      {%- endunless -%}
     {%- endpaginate -%}
   </div>
 </article>
@@ -148,7 +162,23 @@
 
 {% schema %}
 {
-  "name": "Options",
-  "settings": []
+  "name": "t:supplier_pages.options.name",
+  "settings": [
+    {
+      "type": "metaobject_list",
+      "id": "supplier_order",
+      "label": "t:supplier_pages.options.supplier_order_label",
+      "info": "t:supplier_pages.options.supplier_order_info",
+      "metaobject_type": "supplier",
+      "limit": 50
+    },
+    {
+      "type": "checkbox",
+      "id": "only_selected_suppliers",
+      "label": "t:supplier_pages.options.only_selected_label",
+      "info": "t:supplier_pages.options.only_selected_info",
+      "default": false
+    }
+  ]
 }
 {% endschema %}
