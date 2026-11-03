@@ -287,6 +287,11 @@
         "type": "shopify://apps/contact-us-form-with-captcha/blocks/app-embed/a9c778db-ef3e-4d3b-8775-c01d242fd46f",
         "disabled": false,
         "settings": {}
+      },
+      "2567389343055140935": {
+        "type": "shopify://apps/microsoft-clarity/blocks/clarity_js/31c3d126-8116-4b4a-8ba1-baeda7c4aeea",
+        "disabled": false,
+        "settings": {}
       }
     }
   },
