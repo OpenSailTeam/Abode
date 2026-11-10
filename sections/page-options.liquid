@@ -69,6 +69,10 @@
 </article>
 
 {% stylesheet %}
+  .page-content.supplier-options {
+    max-width: 1200px;
+  }
+
   .supplier-options h2,
   .supplier-options h3,
   .supplier-options h4 {
@@ -106,6 +110,12 @@
   @media screen and (min-width: 720px) {
     .supplier-options__samples {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .supplier-options__samples {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
     }
   }
 
