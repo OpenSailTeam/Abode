@@ -461,72 +461,88 @@
       }
     },
     "dynamic_testimonials": {
-      "type": "dynamic-testimonials",
+      "type": "abode-testimonials",
       "blocks": {
         "testimonial-3": {
           "type": "testimonial",
           "disabled": true,
           "settings": {
+            "heading": "Quality that's built to last",
             "star_rating": "5",
             "text": "<p>The store may be a little congested but the service and quality speak for itself.  Super high quality products made in canada.  Go to another store first and then go here.  If you want to buy furniture that will last, this is the place to shop.</p>",
-            "author": "<p>J W</p>"
+            "author": "J W",
+            "detail": ""
           }
         },
         "testimonial-1": {
           "type": "testimonial",
           "settings": {
+            "heading": "The highlight of our new home",
             "star_rating": "5",
             "text": "<p>We moved last fall and required a few new pieces of furniture and décor for our new home.  Our experience with the team of Abode was top notch.  As a matter of fact it was so positive that I went back a number of times to pick up additional small pieces to complete the look of various rooms.  We now have a number of quality and unique pieces that are the highlight of our home.</p>",
-            "author": "<p>Brenda Nowakowski</p>"
+            "author": "Brenda Nowakowski",
+            "detail": ""
           }
         },
         "testimonial-2": {
           "type": "testimonial",
           "settings": {
+            "heading": "Service that went above and beyond",
             "star_rating": "5",
             "text": "<p>I recently purchased a beautiful custom-made table from Abode Furniture, and I couldn't be happier with the entire experience. From start to finish, the service was exceptional. Both Gerrit and Jenna were so kind, personable, knowledgable, and genuinely helpful. They went above and beyond to make sure everything was just right for me, including taking the time to accommodate my needs as someone who uses a wheelchair. I truly appreciated their patience, understanding, and willingness to go the extra mile to make the whole experience comfortable and easy. It's not often that you come across a business where you feel so well taken care of. The quality, service, and personal attention were all outstanding. I would highly recommend Abode Furniture to anyone looking for beautiful furniture and a team that truly cares about their customers. Thank you for making my experience such a wonderful one!</p>",
-            "author": "<p>Laina B</p>"
+            "author": "Laina B",
+            "detail": "Custom table"
           }
         },
         "testimonial-4": {
           "type": "testimonial",
           "settings": {
+            "heading": "Customized exactly how I wanted",
             "star_rating": "4.5",
             "text": "<p>I love love love this place!<br/>No words to describe the quality of their products, not to mention the great customer service.<br/>You can customize your furnitue with the design, colour, and size that you like; or you can purchase the products that they have in stock.<br/>Plus, is Canadian-Made!</p>",
-            "author": "<p>Ana M</p>"
+            "author": "Ana M",
+            "detail": ""
           }
         },
         "testimonial-5": {
           "type": "testimonial",
           "settings": {
+            "heading": "Custom sizing sealed the deal",
             "star_rating": "4.5",
             "text": "<p>The sales staff at Abode were knowledgeable and helpful in selecting a very special dining set for our home.  The fact that we could custom size our set was the deciding factor in our purchase.</p>",
-            "author": "<p>Kim vanDuyvendyk</p>"
+            "author": "Kim vanDuyvendyk",
+            "detail": "Custom dining set"
           }
         },
         "88bc0470-b910-4582-9a3d-d6ef395a5ea5": {
           "type": "testimonial",
           "settings": {
+            "heading": "A table built for our big family",
             "star_rating": "5",
             "text": "<p>Purchased a very large maple custom size table to accommodate our large family. Gerrit and his team were excellent in explaining all the options to me and patient with me while i took my time making all the detailed decisions on our table. We got it 8 months ago now and its an amazing table, Amazing details, amazing quality. Overall very impressed with this shop and highly recommend if you really want quality product.</p>",
-            "author": "<p>Mona A</p>"
+            "author": "Mona A",
+            "detail": "Custom maple dining table"
           }
         },
         "9fcf1108-da87-44c0-bc46-183eef19e228": {
           "type": "testimonial",
           "settings": {
+            "heading": "Wonderful service",
             "star_rating": "5",
             "text": "<p>To the wonderful Abode team, thanks for your great service! </p>",
-            "author": "<p>Teresa</p>"
+            "author": "Teresa",
+            "detail": ""
           }
         },
         "3d8f5c82-1a36-4f2d-b65a-eb8b367b9c0e": {
           "type": "testimonial",
           "disabled": true,
           "settings": {
+            "heading": "Loved it so much we came back",
             "star_rating": "5",
             "text": "<p>Yes!!!!! Purchased dining chairs in 2022, and the table in 2023!!!! Love love the quality and workmanship!!!</p>",
-            "author": "<p>Karri W</p>"
+            "author": "Karri W",
+            "detail": "Dining chairs & table"
           }
         }
       },
@@ -541,10 +557,16 @@
         "3d8f5c82-1a36-4f2d-b65a-eb8b367b9c0e"
       ],
       "settings": {
-        "title": "Testimonials",
-        "testimonials_per_row": "3",
-        "image_crop": "circle",
-        "text_size": "large"
+        "title": "What our customers say",
+        "intro": "",
+        "source": "blocks",
+        "layout": "carousel",
+        "per_row": 3,
+        "clamp_lines": 6,
+        "show_avatars": true,
+        "star_color": "#E5B52F",
+        "link_label": "",
+        "link_url": ""
       }
     },
     "164554963121b95590": {
