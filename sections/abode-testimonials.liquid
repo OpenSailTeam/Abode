@@ -1,0 +1,286 @@
+{{ 'abode-testimonials.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'abode-testimonials.js' | asset_url }}" defer></script>
+
+{%- liquid
+  assign use_metaobjects = false
+  if section.settings.source == 'metaobjects' and shop.metaobjects.testimonial.values.size > 0
+    assign use_metaobjects = true
+  endif
+
+  if use_metaobjects
+    assign testimonial_count = shop.metaobjects.testimonial.values.size
+  else
+    assign testimonial_count = section.blocks.size
+  endif
+
+  assign per_row = section.settings.per_row
+  if testimonial_count < per_row
+    assign per_row = testimonial_count
+  endif
+-%}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    --testimonials-max-width: {{ settings.layout_max_width }}px;
+    --testimonials-per-row: {{ per_row | at_least: 1 }};
+    --testimonials-clamp: {{ section.settings.clamp_lines }};
+    --testimonials-text: {{ settings.color_text }};
+    --testimonials-text-light: {{ settings.color_text_light }};
+    --testimonials-heading: {{ settings.color_headings }};
+    --testimonials-accent: {{ settings.color_links }};
+    --testimonials-star: {{ section.settings.star_color | default: settings.color_product_review_star }};
+    --testimonials-background: {{ settings.color_background }};
+    --testimonials-card: {{ settings.color_background | color_mix: settings.color_text, 97 }};
+    --testimonials-border: {{ settings.color_text | color_modify: 'alpha', 0.12 }};
+  }
+{% endstyle %}
+
+<section
+  class="abode-testimonials-section abode-testimonials-section--{{ section.settings.layout }}"
+  {% if section.settings.title != blank %}
+    aria-labelledby="AbodeTestimonialsHeading-{{ section.id }}"
+  {% endif %}
+>
+  <abode-testimonials class="abode-testimonials" data-layout="{{ section.settings.layout }}">
+    {%- if section.settings.title != blank or section.settings.intro != blank -%}
+      <header class="abode-testimonials__header">
+        {%- if section.settings.title != blank -%}
+          <h2 id="AbodeTestimonialsHeading-{{ section.id }}" class="home-section--title abode-testimonials__title">
+            {{ section.settings.title | escape }}
+          </h2>
+        {%- endif -%}
+        {%- if section.settings.intro != blank -%}
+          <div class="abode-testimonials__intro">{{ section.settings.intro }}</div>
+        {%- endif -%}
+      </header>
+    {%- endif -%}
+
+    {%- if testimonial_count > 0 -%}
+      <div class="abode-testimonials__viewport">
+        <div class="abode-testimonials__track" data-testimonials-track>
+          {%- if use_metaobjects -%}
+            {%- for testimonial in shop.metaobjects.testimonial.values -%}
+              {%- liquid
+                assign testimonial_rating = testimonial.rating.value.rating | default: testimonial.rating.value
+                assign testimonial_quote = testimonial.quote | metafield_tag
+                assign card_id = 'Testimonial-' | append: section.id | append: '-' | append: forloop.index
+              -%}
+              {%- render 'abode-testimonial-card',
+                id: card_id,
+                heading: testimonial.heading.value,
+                quote: testimonial_quote,
+                author: testimonial.author.value,
+                detail: testimonial.detail.value,
+                rating: testimonial_rating,
+                image: testimonial.photo.value,
+                show_avatar: section.settings.show_avatars
+              -%}
+            {%- endfor -%}
+          {%- else -%}
+            {%- for block in section.blocks -%}
+              {%- assign card_id = 'Testimonial-' | append: block.id -%}
+              {%- render 'abode-testimonial-card',
+                id: card_id,
+                heading: block.settings.heading,
+                quote: block.settings.text,
+                author: block.settings.author,
+                detail: block.settings.detail,
+                rating: block.settings.star_rating,
+                image: block.settings.image,
+                show_avatar: section.settings.show_avatars,
+                attributes: block.shopify_attributes
+              -%}
+            {%- endfor -%}
+          {%- endif -%}
+        </div>
+      </div>
+
+      {%- if section.settings.layout == 'carousel' -%}
+        <div class="abode-testimonials__nav" data-testimonials-nav hidden>
+          <button
+            type="button"
+            class="abode-testimonials__arrow"
+            data-testimonials-prev
+            aria-label="Previous testimonials"
+          >
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="20" height="20">
+              <path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.75"/>
+            </svg>
+          </button>
+          <button type="button" class="abode-testimonials__arrow" data-testimonials-next aria-label="Next testimonials">
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="20" height="20">
+              <path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.75"/>
+            </svg>
+          </button>
+        </div>
+      {%- endif -%}
+    {%- endif -%}
+
+    {%- if section.settings.link_label != blank and section.settings.link_url != blank -%}
+      <div class="abode-testimonials__cta">
+        <a class="abode-testimonials__link" href="{{ section.settings.link_url }}">
+          {{- section.settings.link_label | escape -}}
+        </a>
+      </div>
+    {%- endif -%}
+
+    <dialog
+      id="AbodeTestimonialsDialog-{{ section.id }}"
+      class="abode-testimonials__dialog"
+      data-testimonials-dialog
+      aria-label="Customer review"
+    >
+      <div class="abode-testimonials__dialog-inner">
+        <button type="button" class="abode-testimonials__dialog-close" data-testimonials-close aria-label="Close">
+          {%- render 'icon-library', id: 'icon-close' -%}
+        </button>
+        <div data-testimonials-dialog-content></div>
+      </div>
+    </dialog>
+  </abode-testimonials>
+</section>
+
+{% schema %}
+{
+  "name": "Testimonials (Abode)",
+  "class": "abode-testimonials--section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "What our customers say"
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Intro text"
+    },
+    {
+      "type": "select",
+      "id": "source",
+      "label": "Testimonials source",
+      "options": [
+        { "value": "blocks", "label": "Blocks in this section" },
+        { "value": "metaobjects", "label": "Shared testimonials (metaobjects)" }
+      ],
+      "default": "blocks",
+      "info": "Shared testimonials come from Content > Metaobjects > Testimonial and stay the same on every page. Falls back to this section's blocks if none exist."
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "options": [
+        { "value": "carousel", "label": "Carousel" },
+        { "value": "grid", "label": "Grid" }
+      ],
+      "default": "carousel"
+    },
+    {
+      "type": "range",
+      "id": "per_row",
+      "label": "Testimonials per row on desktop",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "clamp_lines",
+      "label": "Lines shown before \"Read full review\"",
+      "min": 3,
+      "max": 12,
+      "step": 1,
+      "default": 6
+    },
+    {
+      "type": "checkbox",
+      "id": "show_avatars",
+      "label": "Show author photo or initials",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Star color",
+      "default": "#E5B52F"
+    },
+    {
+      "type": "header",
+      "content": "Link"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Link label",
+      "info": "e.g. Read more reviews on Google"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Headline",
+          "info": "A short summary shown above the quote, e.g. \"Service that went above and beyond\""
+        },
+        {
+          "type": "select",
+          "id": "star_rating",
+          "label": "Star rating",
+          "options": [
+            { "value": "0", "label": "None" },
+            { "value": "3", "label": "3 out of 5" },
+            { "value": "3.5", "label": "3.5 out of 5" },
+            { "value": "4", "label": "4 out of 5" },
+            { "value": "4.5", "label": "4.5 out of 5" },
+            { "value": "5", "label": "5 out of 5" }
+          ],
+          "default": "5"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Testimonial",
+          "default": "<p>Add customer reviews and testimonials to showcase your store's happy customers.</p>"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author",
+          "default": "Author's name"
+        },
+        {
+          "type": "text",
+          "id": "detail",
+          "label": "Author detail",
+          "info": "e.g. Custom maple dining table"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Author photo",
+          "info": "Initials are shown when empty"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials (Abode)",
+      "category": "Testimonials",
+      "blocks": [{ "type": "testimonial" }, { "type": "testimonial" }, { "type": "testimonial" }]
+    }
+  ]
+}
+{% endschema %}

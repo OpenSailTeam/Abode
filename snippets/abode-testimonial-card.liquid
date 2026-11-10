@@ -1,0 +1,88 @@
+{%- comment -%}
+  Renders one testimonial card for the abode-testimonials section.
+
+  Accepts:
+  - id: unique id for the card (string)
+  - heading: short headline, rendered as an h3 (string)
+  - quote: testimonial body (HTML)
+  - author: customer name (string)
+  - detail: secondary line under the name, e.g. what they bought (string)
+  - rating: 0-5, halves allowed (number or string)
+  - image: optional author photo (image or media object)
+  - show_avatar: show the photo or initials (boolean)
+  - attributes: extra attributes for the card element, e.g. block.shopify_attributes
+{%- endcomment -%}
+
+{%- assign rating = rating | default: 0 | times: 1.0 -%}
+{%- assign author = author | strip_html | strip -%}
+
+<article id="{{ id }}" class="abode-testimonial" data-testimonial {{ attributes }}>
+  {%- if rating > 0 -%}
+    <div
+      class="abode-testimonial__stars"
+      role="img"
+      aria-label="{{ 'Rated ' | append: rating | remove: '.0' | append: ' out of 5' }}"
+    >
+      {%- for i in (1..5) -%}
+        {%- assign half_step = i | minus: 0.5 -%}
+        {%- if rating >= i -%}
+          {%- assign star_state = 'full' -%}
+        {%- elsif rating >= half_step -%}
+          {%- assign star_state = 'half' -%}
+        {%- else -%}
+          {%- assign star_state = 'empty' -%}
+        {%- endif -%}
+        <span class="abode-testimonial__star abode-testimonial__star--{{ star_state }}" aria-hidden="true">
+          {%- render 'icon-library', id: 'icon-star' -%}
+          {%- if star_state == 'half' -%}{%- render 'icon-library', id: 'icon-star' -%}{%- endif -%}
+        </span>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+
+  {%- if heading != blank -%}
+    <h3 class="abode-testimonial__heading">{{ heading | escape }}</h3>
+  {%- endif -%}
+
+  {%- if quote != blank -%}
+    <blockquote class="abode-testimonial__quote" data-testimonial-quote>
+      {{ quote }}
+    </blockquote>
+    <button
+      type="button"
+      class="abode-testimonial__more"
+      aria-haspopup="dialog"
+      data-testimonial-open
+      hidden
+    >
+      Read full review
+      {%- if author != blank -%}
+        <span class="visually-hidden"> from {{ author | escape }}</span>
+      {%- endif -%}
+    </button>
+  {%- endif -%}
+
+  {%- if author != blank or detail != blank -%}
+    <footer class="abode-testimonial__author">
+      {%- if show_avatar -%}
+        <span class="abode-testimonial__avatar" aria-hidden="true">
+          {%- if image != blank -%}
+            {{ image | image_url: width: 160 | image_tag: loading: 'lazy', width: 48, height: 48, alt: '' }}
+          {%- else -%}
+            {%- assign name_parts = author | split: ' ' -%}
+            {{- name_parts.first | slice: 0 | upcase -}}
+            {%- if name_parts.size > 1 -%}{{- name_parts.last | slice: 0 | upcase -}}{%- endif -%}
+          {%- endif -%}
+        </span>
+      {%- endif -%}
+      <span class="abode-testimonial__byline">
+        {%- if author != blank -%}
+          <cite class="abode-testimonial__name">{{ author | escape }}</cite>
+        {%- endif -%}
+        {%- if detail != blank -%}
+          <span class="abode-testimonial__detail">{{ detail | escape }}</span>
+        {%- endif -%}
+      </span>
+    </footer>
+  {%- endif -%}
+</article>
