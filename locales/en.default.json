@@ -8,6 +8,15 @@
  * ------------------------------------------------------------
  */
 {
+  "supplier_pages": {
+    "suppliers": {
+      "empty": "Supplier details will be available soon."
+    },
+    "options": {
+      "empty": "Samples will be available soon.",
+      "view_image": "View {{ name }} at full size"
+    }
+  },
   "404": {
     "general": {
       "title": "Page not found",

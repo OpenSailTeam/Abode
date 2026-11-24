@@ -1,0 +1,20 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "supplier_pages": {
+    "options": {
+      "name": "Options",
+      "supplier_order_label": "Supplier order",
+      "supplier_order_info": "Choose suppliers and drag them into the order you want. Other suppliers with options appear afterward, unless you turn on Show only selected suppliers.",
+      "only_selected_label": "Show only selected suppliers",
+      "only_selected_info": "Off: show all suppliers with options, with your selected suppliers first. On: show only the suppliers in the list above. An empty list shows no suppliers."
+    }
+  }
+}

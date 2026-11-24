@@ -1,0 +1,102 @@
+<article class="site-page" data-template-page>
+  <header class="page-masthead">
+    <h1 class="page-title">{{ page.title | escape }}</h1>
+  </header>
+
+  <div class="page-content supplier-directory">
+    {%- paginate metaobjects.supplier.values by 250 -%}
+      {%- assign suppliers = metaobjects.supplier.values | sort_natural: 'name' -%}
+      {%- capture supplier_cards -%}
+        {%- for supplier in suppliers -%}
+          {%- if supplier.name.value == blank -%}
+            {%- continue -%}
+          {%- endif -%}
+          <li class="supplier-directory__item">
+            {%- if supplier.website.value != blank -%}
+              <a class="supplier-directory__card" href="{{ supplier.website.value | escape }}">
+            {%- else -%}
+              <div class="supplier-directory__card">
+            {%- endif -%}
+              {%- if supplier.logo.value != blank -%}
+                {{- supplier.logo.value | image_url: width: 640 | image_tag:
+                  class: 'logolist--image supplier-directory__logo',
+                  loading: 'lazy',
+                  widths: '160, 320, 640',
+                  sizes: '(min-width: 720px) 320px, 70vw',
+                  alt: ''
+                -}}
+              {%- endif -%}
+              <span class="supplier-directory__name">{{ supplier.name.value | escape }}</span>
+            {%- if supplier.website.value != blank -%}
+              </a>
+            {%- else -%}
+              </div>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      {%- endcapture -%}
+
+      {%- if supplier_cards != blank -%}
+        <ul class="supplier-directory__list" role="list">
+          {{ supplier_cards }}
+        </ul>
+      {%- else -%}
+        <p>{{ 'supplier_pages.suppliers.empty' | t }}</p>
+      {%- endif -%}
+
+      {%- if paginate.pages > 1 -%}
+        {% render 'pagination', paginate: paginate %}
+      {%- endif -%}
+    {%- endpaginate -%}
+  </div>
+</article>
+
+{% stylesheet %}
+  .supplier-directory__list {
+    display: grid;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .supplier-directory__card {
+    display: flex;
+    min-height: 200px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px 20px;
+    color: inherit;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+    box-shadow: 0 1px 4px color-mix(in srgb, currentColor 8%, transparent);
+  }
+
+  .supplier-directory__card[href]:hover .supplier-directory__name {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .supplier-directory__card:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+  }
+
+  .supplier-directory__logo {
+    width: auto;
+    height: auto;
+    max-width: min(100%, 320px);
+    max-height: 160px;
+    object-fit: contain;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Suppliers",
+  "settings": []
+}
+{% endschema %}

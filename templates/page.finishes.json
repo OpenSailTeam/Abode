@@ -10,8 +10,15 @@
 {
   "sections": {
     "main": {
-      "type": "page",
-      "settings": {}
+      "type": "page-options",
+      "settings": {
+        "supplier_order": [
+          "handstone-furniture",
+          "cardinal-woodcraft",
+          "mako-wood-furniture"
+        ],
+        "only_selected_suppliers": false
+      }
     }
   },
   "order": [
