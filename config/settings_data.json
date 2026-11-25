@@ -130,7 +130,7 @@
           "secondary_menu": "sidebar-menu",
           "small_promo_heading": "Call Now",
           "small_promo_text": "<p><a href=\"tel:(306) 934-1733\" title=\"tel:(306) 934-1733\">(306) 934-1733</a></p>",
-          "small_promo_text_mobile": "<p>  Questions?</p>",
+          "small_promo_text_mobile": "<p>&nbsp; Questions?</p>",
           "small_promo_link": "shopify://pages/contact",
           "small_promo_icon": "none",
           "cart_icon": "icon-cart"
@@ -153,19 +153,19 @@
             "type": "rich_text",
             "settings": {
               "title": "Store Hours",
-              "text": "<p><strong>Mon - Sat:</strong> 10AM - 6PM<br/><strong>Sunday:</strong> Closed<br/><br/>Address:<br/><a href=\"https://goo.gl/maps/AT6gAQrX4LTCn8mS7\" target=\"_blank\" title=\"https://goo.gl/maps/AT6gAQrX4LTCn8mS7\">819 2nd Ave N, </a><br/><a href=\"https://goo.gl/maps/AT6gAQrX4LTCn8mS7\" target=\"_blank\" title=\"https://goo.gl/maps/AT6gAQrX4LTCn8mS7\">Saskatoon, SK</a></p>"
+              "text": "<p><strong>Mon - Sat:</strong> 10AM - 6PM<br/><strong>Sunday:</strong> Closed<br/><br/>Address:<br/><a href=\"https://goo.gl/maps/AT6gAQrX4LTCn8mS7\" target=\"_blank\" title=\"https://goo.gl/maps/AT6gAQrX4LTCn8mS7\">819 2nd Ave N,&nbsp;</a><br/><a href=\"https://goo.gl/maps/AT6gAQrX4LTCn8mS7\" target=\"_blank\" title=\"https://goo.gl/maps/AT6gAQrX4LTCn8mS7\">Saskatoon, SK</a></p>"
             }
           },
           "static-footer-0": {
             "type": "menu",
             "settings": {
-              "menu": "main-menu"
+              "menu": "footer-menu"
             }
           },
           "1498182586280": {
             "type": "menu",
             "settings": {
-              "menu": "sidebar-menu"
+              "menu": "policies"
             }
           },
           "1498182572847": {
